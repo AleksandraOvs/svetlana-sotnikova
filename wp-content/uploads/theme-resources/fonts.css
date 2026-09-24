@@ -1,0 +1,45 @@
+@font-face{
+                font-family:'montserrat';
+                src:url('/wp-content/plugins/theme-resources/assets/fonts/montserrat-regular.woff2') format('woff2');
+                font-weight:400;
+                font-style:normal;
+                font-display:swap;
+            }@font-face{
+                font-family:'Montserrat';
+                src:url('/wp-content/plugins/theme-resources/assets/fonts/Montserrat-Bold.ttf') format('truetype');
+                font-weight:700;
+                font-style:normal;
+                font-display:swap;
+            }@font-face{
+                font-family:'PlayfairDisplay';
+                src:url('/wp-content/plugins/theme-resources/assets/fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+                font-weight:400;
+                font-style:italic;
+                font-display:swap;
+            }@font-face{
+                font-family:'PlayfairDisplay';
+                src:url('/wp-content/plugins/theme-resources/assets/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+                font-weight:400;
+                font-style:normal;
+                font-display:swap;
+            }@font-face{
+                font-family:'PlayfairDisplay';
+                src:url('/wp-content/plugins/theme-resources/assets/fonts/PlayfairDisplay-SemiBold.ttf') format('truetype');
+                font-weight:600;
+                font-style:normal;
+                font-display:swap;
+            }:root{--font-heading:'PlayfairDisplay',sans-serif;--font-body:'montserrat',sans-serif;--font-accent:'PlayfairDisplay',sans-serif;}
+        h1,h2,h3 {
+            font-family:var(--font-heading);
+        }
+    
+        body {
+            font-family:var(--font-body);
+        }
+    
+        .accent,
+        .button,
+        strong {
+            font-family:var(--font-accent);
+        }
+    
