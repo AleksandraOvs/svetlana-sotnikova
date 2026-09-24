@@ -1537,6 +1537,7 @@ section.projects {
     color: var(--theme-color-accent);
     font-style: italic;
     font-family: var(--font-accent);
+    display: block;
 }
 
 /* =========================================
