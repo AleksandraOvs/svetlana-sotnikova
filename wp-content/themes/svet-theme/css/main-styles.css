@@ -694,7 +694,7 @@ ul.main-menu li a:hover::before {
 
 .hero {
     display: flex;
-    height: 95vh;
+    height: 100vh;
     overflow: hidden;
     padding-bottom: 0;
     position: relative;
