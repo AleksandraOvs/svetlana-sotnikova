@@ -708,6 +708,12 @@ ul.main-menu li a:hover::before {
     z-index: 5;
 }
 
+.hero>svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .hero__image {
     position: absolute;
     width: calc(40% - 2em);
