@@ -51,6 +51,12 @@
                             <img
                                 src="<?= esc_url($header_logo_url); ?>"
                                 alt="<?= esc_attr($site_name); ?>">
+
+                            <ul class="hero-title-descriptions">
+                                <li>Психолог</li>
+                                <li>Коуч</li>
+                                <li>Женщина — Женщине</li>
+                            </ul>
                         </a>
 
                     <?php } else {
@@ -62,12 +68,6 @@
                                     <?= esc_html($site_name); ?>
                                 </p>
                             <?php endif; ?>
-
-                            <ul class="hero-title-descriptions">
-                                <li>Психолог</li>
-                                <li>Коуч</li>
-                                <li>Женщина — Женщине</li>
-                            </ul>
 
                         </a>
                     <?php
