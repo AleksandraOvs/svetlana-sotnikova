@@ -2341,8 +2341,8 @@ footer.footer * .menu {
 
     .hero-title-descriptions li:after {
         content: '';
-        width: 7px;
-        height: 7px;
+        width: 4px;
+        height: 4px;
         background: var(--theme-color-accent);
         border-radius: 100%;
         display: block;
