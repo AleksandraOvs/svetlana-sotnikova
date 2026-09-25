@@ -2339,7 +2339,8 @@ footer.footer * .menu {
         line-height: 1.4;
     }
 
-    .hero-title-descriptions li:after {
+    .hero-title-descriptions li:after,
+    .hero-title-descriptions li:not(:last-child)::after {
         content: '';
         width: 4px;
         height: 4px;
