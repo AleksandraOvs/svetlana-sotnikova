@@ -28,12 +28,10 @@
 
     <div class="hero__inner">
         <div class="hero__inner__content">
-            <?php if ($title || $title_accent) : ?>
+            <?php if ($title || $title_accent || $description) : ?>
 
                 <div class="hero-title">
-                    <ul class="hero-title-descriptions">
-                        <li>книга бренда</li>
-                    </ul>
+
                     <h1 class="hero__title" data-scroll-animation="brightness">
                         <?php echo esc_html($title); ?>
 
@@ -44,6 +42,11 @@
                             </span>
                         <?php endif; ?>
                     </h1>
+
+                    <div class="hero__description" data-scroll-animation="fade-up">
+                        <?php echo apply_filters('the_content', $description); ?>
+                    </div>
+
                     <ul class="hero-title-descriptions">
                         <li>Коуч</li>
                         <li>Психолог</li>
@@ -53,11 +56,7 @@
 
             <?php endif; ?>
 
-            <?php if ($description) : ?>
-                <div class="hero__description" data-scroll-animation="fade-up">
-                    <?php echo apply_filters('the_content', $description); ?>
-                </div>
-            <?php endif; ?>
+
 
             <?php if (!empty($buttons)) : ?>
 
