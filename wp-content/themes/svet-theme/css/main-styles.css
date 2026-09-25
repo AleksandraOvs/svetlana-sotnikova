@@ -2051,8 +2051,9 @@ input.wpcf7-form-control {
     width: max-content;
 }
 
-.f-html {
-    background: var(--light-gradient);
+.callback-form {
+    border-radius: 20px;
+    background: var(--theme-color-light);
 }
 
 /* =========================================
