@@ -2334,6 +2334,7 @@ footer.footer * .menu {
     .hero-title-descriptions {
         flex-direction: column;
         gap: 0;
+        align-items: flex-start;
         font-size: 12px;
         line-height: 1.4;
     }
@@ -2346,11 +2347,15 @@ footer.footer * .menu {
         border-radius: 100%;
         display: block;
         border-radius: 100%;
+        position: absolute;
+        left: 0;
     }
 
 
     .hero-title-descriptions li {
-        flex-direction: row-reverse;
+        justify-content: flex-start;
+        padding-left: 12px;
+        position: relative;
     }
 
 
