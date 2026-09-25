@@ -801,7 +801,7 @@ ul.main-menu li a:hover::before {
 
 .hero__description {
     font-family: var(--font-heading);
-    font-size: 36px;
+    font-size: clamp(24px, 6vw, 54px);
     font-weight: 600;
     line-height: 120%;
 }
