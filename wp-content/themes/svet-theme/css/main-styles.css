@@ -854,6 +854,35 @@ h1.hero__title span {
     border-radius: 100%;
 }
 
+.hero-title-descriptions {
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.hero-title-descriptions li:after,
+.hero-title-descriptions li:not(:last-child)::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--theme-color-accent);
+    border-radius: 100%;
+    display: block;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+}
+
+
+.hero-title-descriptions li {
+    justify-content: flex-start;
+    padding-left: 12px;
+    position: relative;
+}
+
+
 .button-description {
     display: flex;
     align-items: center;
@@ -2332,33 +2361,6 @@ footer.footer * .menu {
         display: none;
     }
 
-    .hero-title-descriptions {
-        flex-direction: column;
-        gap: 0;
-        align-items: flex-start;
-        font-size: 12px;
-        line-height: 1.4;
-    }
-
-    .hero-title-descriptions li:after,
-    .hero-title-descriptions li:not(:last-child)::after {
-        content: '';
-        width: 4px;
-        height: 4px;
-        background: var(--theme-color-accent);
-        border-radius: 100%;
-        display: block;
-        border-radius: 100%;
-        position: absolute;
-        left: 0;
-    }
-
-
-    .hero-title-descriptions li {
-        justify-content: flex-start;
-        padding-left: 12px;
-        position: relative;
-    }
 
 
     .header__contacts__links {
