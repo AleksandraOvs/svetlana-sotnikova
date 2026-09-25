@@ -63,6 +63,12 @@
                                 </p>
                             <?php endif; ?>
 
+                            <ul class="hero-title-descriptions">
+                                <li>Психолог</li>
+                                <li>Коуч</li>
+                                <li>Женщина — Женщине</li>
+                            </ul>
+
                         </a>
                     <?php
                     } ?>

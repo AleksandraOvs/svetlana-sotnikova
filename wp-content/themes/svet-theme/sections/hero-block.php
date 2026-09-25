@@ -46,12 +46,6 @@
                     <div class="hero__description" data-scroll-animation="fade-up">
                         <?php echo apply_filters('the_content', $description); ?>
                     </div>
-
-                    <ul class="hero-title-descriptions">
-                        <li>Психолог</li>
-                        <li>Коуч</li>
-                        <li>Женщина — Женщине</li>
-                    </ul>
                 </div>
 
             <?php endif; ?>
