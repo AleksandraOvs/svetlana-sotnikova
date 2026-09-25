@@ -3017,10 +3017,6 @@ footer.footer * .menu {
         display: none;
     }
 
-    .header-logo__image {
-        height: 30px;
-    }
-
     p.site-name {
         font-size: 18px;
     }
