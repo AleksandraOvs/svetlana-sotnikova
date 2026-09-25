@@ -2538,6 +2538,11 @@ footer.footer * .menu {
         display: none;
     }
 
+    .header-logo__image {
+        width: 150px;
+        height: 44px;
+    }
+
     /* .header__bottom__actions {
         width: calc(100% - 200px);
         justify-content: flex-end;
@@ -3006,11 +3011,6 @@ footer.footer * .menu {
 
     .mob-menu ul li a {
         padding: 1em .5em;
-    }
-
-    .mob-menu ul li a img {
-        width: 30px;
-        height: 30px;
     }
 
     .header__callback-button.button {
