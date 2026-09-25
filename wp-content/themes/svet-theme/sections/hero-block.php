@@ -48,9 +48,9 @@
                     </div>
 
                     <ul class="hero-title-descriptions">
-                        <li>Коуч</li>
                         <li>Психолог</li>
-                        <li>Лидер мнений</li>
+                        <li>Коуч</li>
+                        <li>Женщина — Женщине</li>
                     </ul>
                 </div>
 
