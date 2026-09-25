@@ -2331,6 +2331,28 @@ footer.footer * .menu {
         display: none;
     }
 
+    .hero-title-descriptions {
+        flex-direction: column;
+        gap: 0;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .hero-title-descriptions li:after {
+        content: '';
+        width: 7px;
+        height: 7px;
+        background: var(--theme-color-accent);
+        border-radius: 100%;
+        display: block;
+        border-radius: 100%;
+    }
+
+
+    .hero-title-descriptions li {
+        flex-direction: row-reverse;
+    }
+
 
     .header__contacts__links {
         display: none;
