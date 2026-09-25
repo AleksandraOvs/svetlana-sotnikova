@@ -2534,6 +2534,10 @@ footer.footer * .menu {
         display: none;
     }
 
+    .hero-title-descriptions {
+        display: none;
+    }
+
     /* .header__bottom__actions {
         width: calc(100% - 200px);
         justify-content: flex-end;
