@@ -145,7 +145,7 @@
 }
 
 .programm-item.light {
-    background: var(--white);
+    background: rgba(255, 255, 255, .7);
     border-color: var(--white);
 }
 

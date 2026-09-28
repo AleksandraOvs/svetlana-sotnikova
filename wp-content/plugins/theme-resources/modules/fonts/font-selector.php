@@ -449,15 +449,15 @@ function plugin_generate_fonts_css()
     ";
     }
 
-    if (!empty($options['accent']['family'])) {
-        $css .= "
-        .accent,
-        .button,
-        strong {
-            font-family:var(--font-accent);
-        }
-    ";
-    }
+    // if (!empty($options['accent']['family'])) {
+    //     $css .= "
+    //     .accent,
+    //     .button,
+    //     strong {
+    //         font-family:var(--font-accent);
+    //     }
+    // ";
+    // }
 
     if (is_writable($dir)) {
         file_put_contents($dir . 'fonts.css', $css);
