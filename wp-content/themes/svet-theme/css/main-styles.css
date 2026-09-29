@@ -2316,7 +2316,7 @@ footer.footer * .menu {
     }
 
     .hero-title {
-        width: 70%;
+        width: 100%;
     }
 
     .hero__image {
@@ -2645,21 +2645,69 @@ footer.footer * .menu {
     .hero__inner__content {
         gap: 3vh;
         justify-content: center;
+        height: max-content;
+        align-self: flex-end;
     }
 
-    .hero-title {
-        margin-bottom: 10vh;
+    .hero {
+        height: 95vh;
+    }
+
+    .hero-nums {
+        flex-direction: row;
+    }
+
+    .about-num__value {
+        font-size: 20px;
+    }
+
+    .hero-nums li:not(:last-child) {
+        border: none;
+        padding: none;
+    }
+
+    .hero-nums li.hero-num {
+        padding: .5em;
+        background: rgba(255, 255, 255, .3);
+        flex: 1;
+        backdrop-filter: blur(20px);
+        border-radius: 7px;
+        border: 1px solid var(--white);
+    }
+
+    .hero__description p {
+        text-align: center;
+    }
+
+    .hero__image {
+        background: linear-gradient(0, rgb(46, 32, 18) 0%, rgba(26, 12, 12, 0.69) 50%, rgba(26, 12, 12, 0) 100%);
+    }
+
+    .hero-num>span {
+        font-size: 14px;
+        letter-spacing: unset;
+        text-transform: none;
     }
 
     .hero__image {
         position: absolute;
         width: 100%;
-        right: -24%;
-        padding-top: 0;
+        right: 0;
+        padding-top: 10vh;
+        padding-bottom: 0;
     }
 
-    .hero-buttons {
-        margin-top: 15vh;
+    .hero__description p {
+        color: var(--white);
+    }
+
+    .hero__description .accent-text {
+        color: var(--white);
+    }
+
+    .hero-buttons .button-outline {
+        background: var(--theme-color-light);
+        border-color: var(--theme-color-light);
     }
 
     .hero__image img {
@@ -2667,6 +2715,12 @@ footer.footer * .menu {
         height: 100%;
         object-fit: cover;
         object-position: center;
+    }
+
+    .hero__inner {
+        height: 100%;
+        padding: 1em;
+        min-height: unset;
     }
 
     .header__bottom__actions {
