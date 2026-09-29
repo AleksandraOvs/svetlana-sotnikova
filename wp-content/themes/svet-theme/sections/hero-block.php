@@ -102,7 +102,7 @@
         <?php if ($background) :
         ?>
 
-            <?php echo '<img class="hero__image" data-scroll-animation="brightness" src="' . esc_url($background) . '" alt="background">'; ?>
+            <?php echo '<div class="hero__image"><img  data-scroll-animation="brightness" src="' . esc_url($background) . '" alt="background"></div>'; ?>
         <?php endif; ?>
 
         <!-- <div class="hero-inner__advs" data-scroll-animation="fade-right">

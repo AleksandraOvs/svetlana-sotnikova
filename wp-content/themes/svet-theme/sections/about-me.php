@@ -19,17 +19,15 @@
 
         </div>
         <div class="about-me__inner">
-
-            <div class="about-me__inner__img">
-                <img class="about-me__img" data-scroll-animation="brightness" src="<?php echo get_stylesheet_directory_uri() ?>/imgs/details.webp" alt="">
-
-                <div class="about-me__inner__img__sign" data-scroll-animation="fade-left">
-                    После разрушения
-                    можно не просто восстановиться. Можно стать живее
-                </div>
-            </div>
-
             <div class="about-me__inner__content">
+                <div class="about-me__inner__img">
+                    <img class="about-me__img" data-scroll-animation="brightness" src="<?php echo get_stylesheet_directory_uri() ?>/imgs/details.webp" alt="">
+
+                    <div class="about-me__inner__img__sign" data-scroll-animation="fade">
+                        После разрушения
+                        можно не просто восстановиться. Можно стать живее
+                    </div>
+                </div>
                 <ul class="about-me__list">
                     <li class="about-me__list__item" data-scroll-animation="fade"><span class="item-num">01</span>
                         <div class="list-head">Семья, где требовали лучшего</div>
@@ -47,11 +45,6 @@
                         <div class="list-head">Материнство, изменившее стержень</div>
                         <p>После нескольких лет попыток ЭКО - я удочерила мою любимую дочь. Умение делать сложные выборы – делает нас сильнее. В этот период я поняла, что Границы необходимые маме для сохранения себя, это один из самых важных навыков в жизни женщины..</p>
                     </li>
-                </ul>
-            </div>
-
-            <div class="about-me__inner__content _second-part">
-                <ul class="about-me__list">
                     <li class="about-me__list__item" data-scroll-animation="fade"><span class="item-num">05</span>
                         <div class="list-head">Болезнь ребенка</div>
                         <p>В 1 год дочки, как гром среди ясного неба диагноз - Нейробластома, операция, химиотерапия. Мужество, то что сейчас мне хочется пожелать, каждой женщине которая сталкивается с болезнью ребенка. И самое важное не оставаться в этом состоянии одной. На том пути крайне важно поддержка специалиста или другой женщины – для того чтобы женщина смогла смогла сохранить себя.</p>
@@ -84,17 +77,12 @@
                         </p>
                     </li>
                 </ul>
+                <div class="about-me__inner__img _img-second">
+                    <img class="about-me__img" data-scroll-animation="brightness" src="<?php echo get_stylesheet_directory_uri() ?>/imgs/svetlana2.webp" alt="">
 
-                <div class="about-me__inner__img">
-
-                </div>
-            </div>
-
-            <div class="about-me__inner__img">
-                <img class="about-me__img" data-scroll-animation="brightness" src="<?php echo get_stylesheet_directory_uri() ?>/imgs/svetlana2.webp" alt="">
-
-                <div class="about-me__inner__img__sign" data-scroll-animation="fade-right">
-                    ... поэтому я знаю, как помочь тебе создать отношения которые хочешь Ты
+                    <div class="about-me__inner__img__sign" data-scroll-animation="fade-right">
+                        ... поэтому я знаю, как помочь тебе создать отношения которые хочешь Ты
+                    </div>
                 </div>
             </div>
 

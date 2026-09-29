@@ -728,11 +728,19 @@ ul.main-menu li a:hover::before {
 
 .hero__image {
     position: absolute;
-    width: calc(40% - 2em);
+    width: calc(50% - 2em);
     right: 0;
     top: 0;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    padding-top: 10vh;
+}
+
+.hero__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     object-position: center;
 }
 
@@ -1100,15 +1108,19 @@ section.home:before {
    About me section
 ========================================= */
 
-.about-me__inner {
-    display: grid;
+.about-me__inner__content {
+    display: flex;
+    flex-wrap: wrap;
     gap: 2em;
-    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    padding-bottom: 20vh;
 }
 
 .about-me__inner__img {
     position: relative;
     overflow: hidden;
+    height: 400px;
+    width: 30%;
 }
 
 .about-me__img {
@@ -1139,11 +1151,20 @@ section.home:before {
     line-height: 1.4;
 }
 
+.about-me__inner__img._img-second {
+    position: absolute;
+    bottom: 0;
+    width: 40%;
+    z-index: -1;
+    height: 600px;
+}
+
 .about-me__list {
     display: flex;
     flex-direction: column;
     gap: 1em;
     list-style: none;
+    width: calc(70% - 2em);
 }
 
 .about-me__list__item {
@@ -1255,6 +1276,7 @@ section.home:before {
 .list-problems {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 1em;
     margin-top: 2em;
 }
@@ -2150,7 +2172,7 @@ footer.footer * .menu {
     }
 
     .section-title {
-        width: 70%;
+        width: 100%;
     }
 
     .header__top {
@@ -2289,12 +2311,17 @@ footer.footer * .menu {
 
     .hero__inner {
         grid-template-columns: 1fr;
-        align-items: flex-end;
+
+        width: 100%;
+    }
+
+    .hero-title {
+        width: 70%;
     }
 
     .hero__image {
         position: absolute;
-        width: 100%;
+        width: 50%;
         right: 0;
         top: 0;
         height: 100%;
@@ -2303,20 +2330,20 @@ footer.footer * .menu {
         z-index: -1;
     }
 
+    .hero-buttons {
+        flex-direction: column;
+    }
+
     .hero__inner__content {
-        padding: 2em;
+        /* padding: 2em;
         justify-content: flex-end;
         background: rgba(255, 255, 255, .3);
         border-radius: 15px;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px); */
         box-sizing: border-box;
         max-width: 100%;
-        gap: 2vh;
-        margin-bottom: -60px;
-    }
-
-    #programms {
-        padding-top: calc(10vh + 40px);
+        justify-content: flex-start;
+        gap: 5vh;
     }
 
     .section-title__inner {
@@ -2324,19 +2351,87 @@ footer.footer * .menu {
         gap: 0;
     }
 
-    .programms-list article:first-child {
+    section.home {
+        position: relative;
+        padding-top: 0;
+    }
+
+    .about-me__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .about-me__inner__img {
+        height: 400px;
+    }
+
+    .about-me__inner__content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me__inner__img {
+        height: 250px;
         width: 100%;
     }
 
-    .programms-list article:nth-child(2) {
-        width: 100%;
+    .about-me__inner__img__sign.is-visible {
+        top: 0;
+        height: 100%;
+        align-items: flex-start;
     }
 
-    .programm-item__structure {
+    .about-me__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        list-style: none;
+        width: 80%;
+        margin-top: -10vh;
+    }
+
+    .about-me__inner__img._img-second {
+        position: relative;
+        bottom: unset;
+        width: 100%;
+        z-index: -1;
+        height: unset;
+        display: flex;
+        align-items: stretch;
+    }
+
+    .about-me__inner__img._img-second img {
+        display: none;
+    }
+
+    .about-me__inner__img._img-second .about-me__inner__img__sign {
+        position: relative;
+        min-height: 100%;
+        background: transparent;
+        color: var(--theme-color-accent);
+        text-align: center;
+        padding: 0;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .about-me__inner__content {
+        padding-bottom: 0;
+    }
+
+
+    .point-rec__inner {
         flex-direction: column;
     }
 
-    .programm-item__structure-item {
+    .point-rec__inner .section-title {
+        width: 100%;
+    }
+
+    .point-rec__lists {
+        width: 100%;
+    }
+
+    .point-rec__inner__content h2 {
         width: 100%;
     }
 
@@ -2395,9 +2490,24 @@ footer.footer * .menu {
         padding-right: 1em;
     }
 
-    .hero__description {
+    /* .hero__description {
         text-align: center;
         width: 100%;
+    } */
+
+    .hero-nums {
+        flex-direction: column;
+    }
+
+    .hero__image {
+        position: absolute;
+        width: 70%;
+        right: -15%;
+        top: 0;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom right;
+        z-index: -1;
     }
 
     .hero::before {
@@ -2530,6 +2640,17 @@ footer.footer * .menu {
         gap: 3vh;
     }
 
+    .hero__image {
+        position: absolute;
+        width: 100%;
+        right: -36%;
+    }
+
+    .hero-buttons {
+        margin-top: 15vh;
+    }
+
+
     .header__bottom__actions {
         width: calc(100% - 200px);
     }
@@ -2589,6 +2710,33 @@ footer.footer * .menu {
         display: none;
     }
 
+    section.home {
+        position: relative;
+        padding-top: 10vh;
+    }
+
+    .section-home__inner {
+        overflow: hidden;
+    }
+
+    .home-section__img {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        right: -28%;
+        height: 589px;
+        object-fit: contain;
+        object-position: right bottom;
+        z-index: 2;
+    }
+
+    .section-home__inner {
+        padding: 5vh 30% 5vh 0;
+    }
+
+    .section-title__inner._section-home__title h2 {
+        font-size: 24px;
+    }
 
 
     /* ._grid-template .products-categories__list__item:nth-child(1) {
@@ -2666,6 +2814,14 @@ footer.footer * .menu {
 
     .about-us__list {
         gap: 1em;
+    }
+
+    .about-me__list {
+        width: 100%;
+    }
+
+    .about-me__inner__img._img-second .about-me__inner__img__sign {
+        width: 100%;
     }
 
     .offer-banner {

@@ -160,3 +160,42 @@
 .programm-item.light .programm-item__content .programm-item__structure .programm-item__structure-item {
     background: var(--theme-color-light);
 }
+
+@media (max-width: 768px) {
+    #programms {
+        padding-top: 0;
+    }
+
+    .programms-list {
+        flex-direction: column;
+    }
+
+    .programms-list article:first-child {
+        width: 100%;
+    }
+
+    .programms-list article:nth-child(2) {
+        width: 100%;
+    }
+
+    .programm-item__structure-item {
+        width: 100%;
+    }
+
+    .programm-item__image {
+        display: none;
+    }
+
+    .programm-item__structure-item.grid-element {
+        width: calc(100% / 2 - .6em);
+    }
+
+}
+
+@media (max-width: 480px) {
+    .programm-item__content {
+        padding: 1em;
+    }
+
+
+}
