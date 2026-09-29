@@ -2643,7 +2643,8 @@ footer.footer * .menu {
     .hero__image {
         position: absolute;
         width: 100%;
-        right: -36%;
+        right: -24%;
+        padding-top: 0;
     }
 
     .hero-buttons {
