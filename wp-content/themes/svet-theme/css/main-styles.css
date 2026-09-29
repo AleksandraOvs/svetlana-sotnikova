@@ -2828,6 +2828,14 @@ footer.footer * .menu {
         content: none;
     }
 
+    .point-rec__lists {
+        flex-direction: column;
+    }
+
+    .point-rec__inner {
+        gap: 1em;
+    }
+
     .offer-banner {
         height: max-content;
     }
