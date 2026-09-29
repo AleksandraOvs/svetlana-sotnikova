@@ -2712,7 +2712,7 @@ footer.footer * .menu {
 
     section.home {
         position: relative;
-        padding-top: 10vh;
+        padding-top: 0;
     }
 
     .section-home__inner {
