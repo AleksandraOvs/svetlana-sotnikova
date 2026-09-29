@@ -2632,12 +2632,23 @@ footer.footer * .menu {
         padding-inline: 1em;
     }
 
+    .button,
+    .button-outline {
+        min-width: 100%;
+        letter-spacing: 3%;
+    }
+
     .header__bottom-logo {
         order: 4;
     }
 
     .hero__inner__content {
         gap: 3vh;
+        justify-content: center;
+    }
+
+    .hero-title {
+        margin-bottom: 10vh;
     }
 
     .hero__image {
