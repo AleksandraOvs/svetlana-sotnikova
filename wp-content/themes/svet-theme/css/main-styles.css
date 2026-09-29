@@ -2824,7 +2824,7 @@ footer.footer * .menu {
         width: 100%;
     }
 
-    .section-home__inner::after {
+    .section-home__inner::before {
         content: none;
     }
 
