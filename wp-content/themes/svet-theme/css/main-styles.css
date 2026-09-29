@@ -2316,7 +2316,7 @@ footer.footer * .menu {
     }
 
     .hero-title {
-        width: 100%;
+        width: 70%;
     }
 
     .hero__image {
@@ -2653,6 +2653,10 @@ footer.footer * .menu {
         height: 95vh;
     }
 
+    .hero-title {
+        width: 100%;
+    }
+
     .hero-nums {
         flex-direction: row;
     }
@@ -2679,9 +2683,6 @@ footer.footer * .menu {
         text-align: center;
     }
 
-    .hero__image {
-        background: linear-gradient(0, rgb(46, 32, 18) 0%, rgba(26, 12, 12, 0.69) 50%, rgba(26, 12, 12, 0) 100%);
-    }
 
     .hero-num>span {
         font-size: 14px;
@@ -2695,6 +2696,7 @@ footer.footer * .menu {
         right: 0;
         padding-top: 10vh;
         padding-bottom: 0;
+        background: linear-gradient(0, rgb(46, 32, 18) 0%, rgba(26, 12, 12, 0.69) 50%, rgba(26, 12, 12, 0) 100%);
     }
 
     .hero__description p {
