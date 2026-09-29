@@ -2662,6 +2662,12 @@ footer.footer * .menu {
         margin-top: 15vh;
     }
 
+    .hero__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 
     .header__bottom__actions {
         width: calc(100% - 200px);
