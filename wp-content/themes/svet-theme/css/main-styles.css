@@ -2824,6 +2824,10 @@ footer.footer * .menu {
         width: 100%;
     }
 
+    .section-home__inner::after {
+        content: none;
+    }
+
     .offer-banner {
         height: max-content;
     }
