@@ -2663,6 +2663,7 @@ footer.footer * .menu {
         justify-content: center;
         height: max-content;
         align-self: flex-end;
+        padding: 0;
     }
 
     .hero {
