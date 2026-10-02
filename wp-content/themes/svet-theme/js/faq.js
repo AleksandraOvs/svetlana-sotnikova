@@ -1,5 +1,5 @@
 /* ===============================
-      SINGLE PRODUCT FAQ
+      FAQ
    =============================== */
 
 document.addEventListener('click', function (e) {

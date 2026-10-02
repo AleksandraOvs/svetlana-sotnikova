@@ -276,6 +276,64 @@ add_action('carbon_fields_register_fields', function () {
         ])
 
         // ------------------------
+        // Методология
+        // ------------------------
+        ->add_tab('Методология', [
+
+            Field::make('text', 'metods_block_subtitle', 'Название раздела')
+                ->set_width(33),
+            Field::make('text', 'metods_block_title', 'Заголовок часть 1')
+                ->set_width(33),
+            Field::make('text', 'metods_block_title_accent', 'Заголовок часть акцент')
+                ->set_width(33),
+            Field::make('rich_text', 'metods_block_title_description', 'Краткое описание')
+                ->set_width(33),
+            Field::make('image', 'metods_block_image', 'Изображение для блока')
+                ->set_width(33),
+
+
+            Field::make('complex', 'metods_list', 'Список методов (ссылки)')
+                ->add_fields([
+                    Field::make('text', 'metods_list_item_link', 'Ссылка блока'),
+                    Field::make('image', 'metods_list_item_icon', 'Иконка'),
+                    Field::make('text', 'metods_list_item_subtitle', 'Подзаголовок'),
+                    Field::make('text', 'metods_list_item_title', 'Заголовок'),
+                    Field::make('rich_text', 'metods_list_item_description', 'Описание метода')
+                ]),
+
+        ])
+
+        // ------------------------
+        // FAQ
+        // ------------------------
+
+        ->add_tab('FAQ', [
+
+            Field::make('text', 'faq_block_subtitle', 'Название раздела')
+                ->set_width(33),
+            Field::make('text', 'faq_block_title', 'Заголовок часть 1')
+                ->set_width(33),
+            Field::make('text', 'faq_block_title_accent', 'Заголовок часть акцент')
+                ->set_width(33),
+            Field::make('rich_text', 'faq_block_title_description', 'Краткое описание')
+                ->set_width(33),
+            Field::make('image', 'faq_block_image', 'Изображение для блока')
+                ->set_width(33),
+
+            Field::make('complex', 'faq', 'Вопросы и ответы')
+                ->set_layout('tabbed-vertical')
+                ->add_fields([
+
+                    Field::make('text', 'question', 'Вопрос'),
+
+                    Field::make('rich_text', 'answer', 'Ответ')
+                        ->set_rows(5),
+
+                ]),
+
+        ])
+
+        // ------------------------
         // Блок с формой о/с
         // ------------------------
 
@@ -308,27 +366,6 @@ add_action('carbon_fields_register_fields', function () {
         ]);
 
 
-
-
-
-    // ------------------------
-    // FAQ
-    // ------------------------
-
-    // ->add_tab('FAQ', [
-
-    //     Field::make('complex', 'faq', 'Вопросы и ответы')
-    //         ->set_layout('tabbed-vertical')
-    //         ->add_fields([
-
-    //             Field::make('text', 'question', 'Вопрос'),
-
-    //             Field::make('rich_text', 'answer', 'Ответ')
-    //                 ->set_rows(5),
-
-    //         ]),
-
-    // ]);
 
     // ------------------------
     // VIDEOS
@@ -492,7 +529,7 @@ add_action('carbon_fields_register_fields', function () {
                 ->set_default_value('light'),
         ]);
 
-    Container::make('theme_options', 'Контакты')
+    Container::make('theme_options', 'Настройки сайта')
         ->add_tab('Контакты', [
 
             Field::make('text', 'crb_phone', 'Номер телефона')
@@ -557,5 +594,24 @@ add_action('carbon_fields_register_fields', function () {
                     Field::make('text', 'link', 'Ссылка')
                         ->set_width(45),
                 ]),
+        ])
+
+        ->add_tab('Отзывы', [
+            Field::make('text', 'reviews_block_subtitle', 'Название раздела')
+                ->set_width(33),
+            Field::make('text', 'reviews_block_title', 'Заголовок часть')
+                ->set_width(33),
+            Field::make('text', 'reviews_block_title_accent', 'Заголовок часть акцент')
+                ->set_width(33),
+            Field::make('rich_text', 'reviews_block_title_description', 'Краткое описание')
+                ->set_width(33),
+
+            Field::make('complex', 'reviews_list', 'Отзывы')
+                ->add_fields([
+                    Field::make('rich_text', 'reviews_list_item_text', 'Текст отзыва')
+                        ->set_width(70),
+                    Field::make('text', 'reviews_list_item_sign', 'Подпись')
+                        ->set_width(30),
+                ])
         ]);
 });
