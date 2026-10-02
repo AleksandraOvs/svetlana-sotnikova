@@ -2415,10 +2415,6 @@ footer.footer * .menu {
         align-items: stretch;
     }
 
-    .about-me__inner__img._img-second img {
-        display: none;
-    }
-
     .about-me__inner__img._img-second .about-me__inner__img__sign {
         position: relative;
         min-height: 100%;
@@ -2430,13 +2426,21 @@ footer.footer * .menu {
         margin: 0 auto;
     }
 
-    .about-me__inner__content {
-        padding-bottom: 0;
+    .about-me__inner__img._img-second {
+        position: absolute;
+        bottom: 5vh;
     }
-
 
     .point-rec__inner {
         flex-direction: column;
+    }
+
+    .about-me__inner__img._img-second img {
+        display: none;
+    }
+
+    .about-me {
+        padding-bottom: 0;
     }
 
     .point-rec__inner .section-title {

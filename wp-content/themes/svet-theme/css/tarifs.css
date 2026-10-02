@@ -167,10 +167,6 @@
         width: 100%;
     }
 
-    .tarif-item__bottom {
-        flex-direction: row;
-    }
-
     .tarif-item__structure {
         gap: 1em;
     }
