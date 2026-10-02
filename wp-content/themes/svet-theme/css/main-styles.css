@@ -2394,6 +2394,9 @@ footer.footer * .menu {
         top: 0;
         height: 100%;
         align-items: flex-start;
+        text-align: center;
+        width: 80%;
+        padding-inline: 10%;
     }
 
     .about-me__list {
