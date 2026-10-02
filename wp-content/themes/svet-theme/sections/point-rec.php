@@ -1,72 +1,142 @@
+<?php
+
+// Блок «Точка узнавания»
+$point_rec_block_list_title = carbon_get_post_meta(get_the_ID(), 'point_rec_block_list_title');
+$point_rec_block_list_first = carbon_get_post_meta(get_the_ID(), 'point_rec_block_list_first');
+
+$point_rec_block_list_title_second = carbon_get_post_meta(get_the_ID(), 'point_rec_block_list_title_second');
+$point_rec_block_list_second = carbon_get_post_meta(get_the_ID(), 'point_rec_block_list_second');
+
+$point_rec_problems_block_subtitle = carbon_get_post_meta(get_the_ID(), 'point_rec_problems_block_subtitle');
+$point_rec_problems_block_title = carbon_get_post_meta(get_the_ID(), 'point_rec_problems_block_title');
+$point_rec_problems_block_title_accent = carbon_get_post_meta(get_the_ID(), 'point_rec_problems_block_title_accent');
+$point_rec_problems_block_title_description = carbon_get_post_meta(get_the_ID(), 'point_rec_problems_block_title_description');
+
+$point_rec_problems_block_list = carbon_get_post_meta(get_the_ID(), 'point_rec_problems_block_list');
+$point_rec_problems_block_content = carbon_get_post_meta(get_the_ID(), 'point_rec_problems_block_content');
+
+?>
+
 <section class="point-rec">
     <div class="fixed-container">
         <div class="point-rec__inner">
-            <div class="section-title">
-                <div class="section-title__desc">Точка узнавания</div>
 
-                <div class="section-title__inner">
+            <?php
+            $point_rec_block_subtitle = carbon_get_post_meta(get_the_ID(), 'point_rec_block_subtitle');
+            $point_rec_block_title = carbon_get_post_meta(get_the_ID(), 'point_rec_block_title');
+            $point_rec_block_title_accent = carbon_get_post_meta(get_the_ID(), 'point_rec_block_title_accent');
+            $point_rec_block_title_description = carbon_get_post_meta(get_the_ID(), 'point_rec_block_title_description');
 
-                    <h2>
-                        Ты можешь быть сильной.
-                        <span class="accent-text">
-                            И&nbsp;всё&nbsp;равно хотеть любви
-                        </span>
-                    </h2>
-                    <div class="section-title__description">
-                        Возможно, ты привыкла справляться сама. И это стало твоей бронёй - и твоей клеткой одновременно.
-                    </div>
-                </div>
-            </div>
+            get_template_part(
+                'template-parts/block-title',
+                null,
+                [
+                    'desc' => 'programms_block_titles',
+
+                    'subtitle' => $point_rec_block_subtitle,
+                    'title'        => $point_rec_block_title,
+                    'title_accent' => $point_rec_block_title_accent,
+                    'description'  => $point_rec_block_title_description,
+                ]
+            );
+            ?>
 
             <div class="point-rec__lists">
-                <div class="point-rec__list">
-                    <h3>Ты привыкла</h3>
-                    <ul>
-                        <li>Справляться сама</li>
-                        <li>Решать</li>
-                        <li>Зарабатывать</li>
-                        <li>Контролировать</li>
-                        <li>Не показывать уязвимость</li>
-                    </ul>
-                </div>
 
-                <div class="point-rec__list">
-                    <h3>А внутри хочется</h3>
-                    <ul>
-                        <li>Чтобы рядом был мужчина, с&nbsp;которым можно расслабиться</li>
-                        <li>Чтобы тебя выбирали</li>
-                        <li>О тебе заботились</li>
-                        <li>С тобой считались</li>
-                        <li>Тебе было интересно, спокойно и&nbsp;хорошо</li>
-                    </ul>
-                </div>
+                <?php if ($point_rec_block_list_title || $point_rec_block_list_first) : ?>
+                    <div class="point-rec__list">
+
+                        <?php if ($point_rec_block_list_title) : ?>
+                            <h3>
+                                <?php echo esc_html($point_rec_block_list_title); ?>
+                            </h3>
+                        <?php endif; ?>
+
+                        <?php if ($point_rec_block_list_first) : ?>
+                            <ul>
+                                <?php foreach ($point_rec_block_list_first as $item) : ?>
+                                    <?php if (!empty($item['point_rec_block_item'])) : ?>
+                                        <li>
+                                            <?php echo wp_kses_post($item['point_rec_block_item']); ?>
+                                        </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+
+                    </div>
+                <?php endif; ?>
+
+
+                <?php if ($point_rec_block_list_title_second || $point_rec_block_list_second) : ?>
+                    <div class="point-rec__list">
+
+                        <?php if ($point_rec_block_list_title_second) : ?>
+                            <h3>
+                                <?php echo esc_html($point_rec_block_list_title_second); ?>
+                            </h3>
+                        <?php endif; ?>
+
+                        <?php if ($point_rec_block_list_second) : ?>
+                            <ul>
+                                <?php foreach ($point_rec_block_list_second as $item) : ?>
+                                    <?php if (!empty($item['point_rec_block_item_second'])) : ?>
+                                        <li>
+                                            <?php echo wp_kses_post($item['point_rec_block_item_second']); ?>
+                                        </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+
+                    </div>
+                <?php endif; ?>
 
             </div>
 
+
             <div class="point-rec__inner__content">
-                <h2>
-                    Но прошлый опыт мешает доверять.
-                    <span class="accent-text">
-                        И&nbsp;тогда появляются:
-                    </span>
-                </h2>
 
-                <ul class="list-problems">
-                    <li class="problem-item" data-scroll-animation="fade">Контроль</li>
-                    <li class="problem-item" data-scroll-animation="fade">Тревога</li>
-                    <li class="problem-item" data-scroll-animation="fade">Гнев</li>
-                    <li class="problem-item" data-scroll-animation="fade">Обида</li>
-                    <li class="problem-item" data-scroll-animation="fade">Зависимость</li>
-                    <li class="problem-item" data-scroll-animation="fade">Разочарование</li>
-                    <li class="problem-item" data-scroll-animation="fade">Одиночество</li>
-                </ul>
+                <?php if ($point_rec_problems_block_title || $point_rec_problems_block_title_accent) : ?>
+                    <h2>
+                        <?php echo esc_html($point_rec_problems_block_title); ?>
 
-                <div class="point-rec__answer">
-                    Я помогаю разобраться не только с тем, <strong>что происходит в отношениях</strong>, - но и с тем, <span class="accent-text">почему именно так ты&nbsp;реагируешь</span> и&nbsp;убрать эту реакцию
-                </div>
+                        <?php if ($point_rec_problems_block_title_accent) : ?>
+                            <span class="accent-text">
+                                <?php echo esc_html($point_rec_problems_block_title_accent); ?>
+                            </span>
+                        <?php endif; ?>
+                    </h2>
+                <?php endif; ?>
+
+
+                <?php if ($point_rec_problems_block_list) : ?>
+                    <ul class="list-problems">
+
+                        <?php foreach ($point_rec_problems_block_list as $item) : ?>
+
+                            <?php if (!empty($item['point_rec_problems_block_list_item'])) : ?>
+                                <li
+                                    class="problem-item"
+                                    data-scroll-animation="fade">
+                                    <?php echo esc_html($item['point_rec_problems_block_list_item']); ?>
+                                </li>
+                            <?php endif; ?>
+
+                        <?php endforeach; ?>
+
+                    </ul>
+                <?php endif; ?>
+
+
+                <?php if ($point_rec_problems_block_content) : ?>
+                    <div class="point-rec__answer">
+                        <?php echo wp_kses_post($point_rec_problems_block_content); ?>
+                    </div>
+                <?php endif; ?>
+
             </div>
 
         </div>
-
     </div>
 </section>

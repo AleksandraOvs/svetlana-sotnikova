@@ -1,93 +1,146 @@
+<?php
+
+$photos = carbon_get_post_meta(get_the_ID(), 'about_me_photos');
+$list = carbon_get_post_meta(get_the_ID(), 'about_me_list');
+
+?>
+
 <section class="about-me">
+
     <div class="fixed-container">
-        <div class="section-title">
-            <div class="section-title__desc">Обо мне</div>
 
-            <div class="section-title__inner">
+        <!-- Заголовок -->
+        <?php
 
-                <h2>
-                    От ведения переговоров между Россией и Китаем,
-                    <span class="accent-text">
-                        в построение отношений между мужчиной и&nbsp;женщиной
-                    </span>
-                </h2>
-                <div class="section-title__description">
-                    Моя жизнь содержала почти все сложные этапы, которые проходят многие женщины. И пройдя их, теперь я знаю, как важна поддержка мудрой женщины, которой удалось построить счастливые свободные отношения.
-                </div>
-            </div>
+        $about_me_block_subtitle = carbon_get_post_meta(get_the_ID(), 'about_me_block_subtitle');
+        $about_me_block_title = carbon_get_post_meta(get_the_ID(), 'about_me_block_title');
+        $about_me_block_title_accent = carbon_get_post_meta(get_the_ID(), 'about_me_block_title_accent');
+        $about_me_block_description = carbon_get_post_meta(get_the_ID(), 'about_me_block_title_description');
+
+        get_template_part(
+            'template-parts/block-title',
+            null,
+            [
+                'desc'         => 'about_me_block_titles',
+
+                'subtitle' => $about_me_block_subtitle,
+                'title'        => $about_me_block_title,
+                'title_accent' => $about_me_block_title_accent,
+                'description'  => $about_me_block_description,
+            ]
+        );
+        ?>
 
 
-        </div>
+        <!-- Контент -->
         <div class="about-me__inner">
+
             <div class="about-me__inner__content">
-                <div class="about-me__inner__img">
-                    <img class="about-me__img" data-scroll-animation="brightness" src="<?php echo get_stylesheet_directory_uri() ?>/imgs/details.webp" alt="">
 
-                    <div class="about-me__inner__img__sign" data-scroll-animation="fade">
-                        После разрушения
-                        можно не просто восстановиться. Можно стать живее
-                    </div>
-                </div>
-                <ul class="about-me__list">
-                    <li class="about-me__list__item" data-scroll-animation="fade"><span class="item-num">01</span>
-                        <div class="list-head">Семья, где требовали лучшего</div>
-                        <p>Я первая дочь в семье с высокими требованиями, критикой и обесцениванием. Скандалы взрослых я считывала как угрозу. С трёх лет - больницы. Так появились тревога и потребность искать безопасность.</p>
-                    </li>
-                    <li class="about-me__list__item" data-scroll-animation="fade"><span class="item-num">02</span>
-                        <div class="list-head">Первый брак: быть выбранной важнее, чем быть собой</div>
-                        <p>Диагноз «бесплодие». Отказ мужа идти со мной в усыновление. Я назвала это предательством. Тогда я ещё не умела отделять любовь от своих ожиданий и договариваться с близкими о важным мне вещах. Итог развод.</p>
-                    </li>
-                    <li class="about-me__list__item" data-scroll-animation="fade"><span class="item-num">03</span>
-                        <div class="list-head">14 лет в роли спасателя</div>
-                        <p>Я встретила мужчину которого полюбила и пыталась спасти от зависимости. «Мы справимся, моя любовь поможет ему». Я пыталась изменить взрослого человека любовью, верой и собственными усилиями – в итоге и поняла: Человек меняется, только если он сам этого захочет. Мы не всесильны.</p>
-                    </li>
-                    <li class="about-me__list__item" data-scroll-animation="fade"><span class="item-num">04</span>
-                        <div class="list-head">Материнство, изменившее стержень</div>
-                        <p>После нескольких лет попыток ЭКО - я удочерила мою любимую дочь. Умение делать сложные выборы – делает нас сильнее. В этот период я поняла, что Границы необходимые маме для сохранения себя, это один из самых важных навыков в жизни женщины..</p>
-                    </li>
-                    <li class="about-me__list__item" data-scroll-animation="fade"><span class="item-num">05</span>
-                        <div class="list-head">Болезнь ребенка</div>
-                        <p>В 1 год дочки, как гром среди ясного неба диагноз - Нейробластома, операция, химиотерапия. Мужество, то что сейчас мне хочется пожелать, каждой женщине которая сталкивается с болезнью ребенка. И самое важное не оставаться в этом состоянии одной. На том пути крайне важно поддержка специалиста или другой женщины – для того чтобы женщина смогла смогла сохранить себя.</p>
-                    </li>
-                    <li class="about-me__list__item" data-scroll-animation="fade"><span class="item-num">06</span>
-                        <div class="list-head">Рай не спасет твой брак, если роль выбрана не та.</div>
-                        <p>Если в ваших отношениях нет доверия и взаимо поддержки – их не изменят ни квартира, город, страна, финансы.
 
-                            С 2015 мы переехали жить в мужем в Китай, потому что у него, по его мнению были там большие перспективы.
+                <?php
+                /*
+                 * ========================================
+                 * Фотографии
+                 * ========================================
+                 */
 
-                            Я получила прекрасную жизнь в роскошном комплексе в райском саду – но внутри оказалась загнанной в капкан. Внешний «рай» не лечит сценарий, он его обнажает. И там, после четырнадцати лет я увидела человека рядом и свой сценарий “Спасти”.
+                if (!empty($photos)) :
 
-                            Начались годы внутренней работы: психология, коучинг, терапия – Развод.
-                            Когда ты не можешь положиться на человека рядом - ты становишься этим человеком сам.
+                    foreach ($photos as $index => $photo) :
 
-                            В Китае я начала работать в международной общественной организации. Другой менталитет, другие законы бизнеса, другой уровень взаимодействия. Я проводила переговоры между бизнесами, культурными объединениями и органами власти России и Китая. Понимание, умение видеть цели и мотивы каждой из сторон, находить решение и поддерживать каждую из сторон на пути к реализации проекта, переговоров или сделки ведущей к сотрудничеству. По сути это работа медиатора. И именно эти навыки, потом станут основой моего метода помогая понимать, поддерживать и вести женщину на пути к её собственной Ценности и готовности к зрелым отношениям .
-                        </p>
-                    </li>
-                    <li class="about-me__list__item" data-scroll-animation="fade"><span class="item-num">07</span>
-                        <div class="list-head">Своё дно - как дверь в личное СЧАСТЬЕ</div>
-                        <p>Выйдя, из отношений я почувствовала огромный приток сил - и тут же направила их в новые созависимые отношения.
-                            Каждая женщина в какой-то момент устает играть одну и ту же Драму, и эта точка - есть начало твоих изменений. И видя сейчас свои новые, любящие и поддерживающие отношения – я понимаю, что оно того стоило!
-                        </p>
-                    </li>
-                    <li class="about-me__list__item" data-scroll-animation="fade"><span class="item-num">08</span>
-                        <div class="list-head">От исцеления - к работе с людьми</div>
-                        <p>Сегодня я работаю преимущественно с женщинами. И вижу за внешним поведением внутреннюю причину: не только что именно женщина делает, но и почему.
-                            Мне самой пришлось заново научиться быть с собой. И постепенно я обнаружила другую жизнь: счастливую, полную любви, заботы, удовольствия и свободы быть разной собой.
-                            Я использую свой авторский метод - сочетающий эмоционально образную терапию, психологию и коучиновый подход трансформации личности. Женщины, с которыми я работала проходят из кризисов и апатии в счастливые отношения, на своих условиях.
-                        </p>
-                    </li>
-                </ul>
-                <div class="about-me__inner__img _img-second">
-                    <img class="about-me__img" data-scroll-animation="brightness" src="<?php echo get_stylesheet_directory_uri() ?>/imgs/svetlana2.webp" alt="">
+                        $photo_id = $photo['about_me_photo'] ?? '';
+                        $photo_sign = $photo['about_me_photo_sign'] ?? '';
 
-                    <div class="about-me__inner__img__sign" data-scroll-animation="fade-right">
-                        ... поэтому я знаю, как помочь тебе создать отношения которые хочешь Ты
-                    </div>
-                </div>
+                        if (!$photo_id) {
+                            continue;
+                        }
+
+                        $image_url = wp_get_attachment_image_url($photo_id, 'full');
+                        $image_alt = get_post_meta(
+                            $photo_id,
+                            '_wp_attachment_image_alt',
+                            true
+                        );
+
+                ?>
+
+                        <div
+                            class="about-me__inner__img<?php echo $index === 1 ? ' _img-second' : ''; ?>">
+
+                            <img
+                                class="about-me__img"
+                                data-scroll-animation="brightness"
+                                src="<?php echo esc_url($image_url); ?>"
+                                alt="<?php echo esc_attr($image_alt); ?>">
+
+                            <?php if ($photo_sign) : ?>
+
+                                <div
+                                    class="about-me__inner__img__sign"
+                                    data-scroll-animation="<?php echo $index === 1 ? 'fade-right' : 'fade'; ?>">
+                                    <?php echo wp_kses_post($photo_sign); ?>
+                                </div>
+
+                            <?php endif; ?>
+
+                        </div>
+
+                <?php
+
+                    endforeach;
+
+                endif;
+                ?>
+
+
+                <?php
+                /*
+                 * ========================================
+                 * Список
+                 * ========================================
+                 */
+
+                if (!empty($list)) :
+                ?>
+
+                    <ul class="about-me__list">
+
+                        <?php foreach ($list as $index => $item) : ?>
+
+                            <?php
+                            $item_text = $item['about_me_list_item'] ?? '';
+
+                            if (!$item_text) {
+                                continue;
+                            }
+                            ?>
+
+                            <li
+                                class="about-me__list__item"
+                                data-scroll-animation="fade">
+
+                                <span class="item-num">
+                                    <?php echo esc_html(sprintf('%02d', $index + 1)); ?>
+                                </span>
+
+                                <div class="list-content">
+                                    <?php echo wp_kses_post($item_text); ?>
+                                </div>
+
+                            </li>
+
+                        <?php endforeach; ?>
+
+                    </ul>
+
+                <?php endif; ?>
+
+
             </div>
 
-
         </div>
+
     </div>
 
 </section>

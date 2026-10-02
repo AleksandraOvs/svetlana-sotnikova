@@ -1,12 +1,12 @@
-<section class="programms-section" id="programms">
+<section class="broadcasts-section" id="broadcasts">
     <div class="fixed-container">
 
         <?php
 
-        $block_subtitle = carbon_get_post_meta(get_the_ID(), 'programms_block_subtitle');
-        $block_title = carbon_get_post_meta(get_the_ID(), 'programms_block_title');
-        $block_title_accent = carbon_get_post_meta(get_the_ID(), 'programms_block_title_accent');
-        $block_description = carbon_get_post_meta(get_the_ID(), 'programms_block_title_description');
+        $block_subtitle = carbon_get_post_meta(get_the_ID(), 'broadcasts_block_subtitle');
+        $block_title = carbon_get_post_meta(get_the_ID(), 'broadcasts_block_title');
+        $block_title_accent = carbon_get_post_meta(get_the_ID(), 'broadcasts_block_title_accent');
+        $block_description = carbon_get_post_meta(get_the_ID(), 'broadcasts_block_title_description');
 
         get_template_part(
             'template-parts/block-title',
@@ -24,7 +24,7 @@
 
         <?php
         $programms = new WP_Query([
-            'post_type'      => 'programms',
+            'post_type'      => 'broadcasts',
             'post_status'    => 'publish',
             'posts_per_page' => -1,
             'orderby'        => 'menu_order',
@@ -33,12 +33,12 @@
 
         if ($programms->have_posts()) :
         ?>
-            <div class="programms-list">
+            <div class="broadcasts-list">
             <?php
             while ($programms->have_posts()) :
                 $programms->the_post();
 
-                get_template_part('template-parts/programm-item');
+                get_template_part('template-parts/broadcast-item');
 
             endwhile;
 
@@ -46,6 +46,15 @@
 
         endif;
             ?>
+            </div>
+            <div class="videos-section__button">
+
+                <a
+                    href="/broadcasts"
+                    class="button">
+                    Смотреть все видео
+                </a>
+
             </div>
 
     </div>

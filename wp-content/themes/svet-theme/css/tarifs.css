@@ -1,0 +1,178 @@
+#tarifs {
+    padding-top: 0;
+}
+
+.tarifs-section__list {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.tarif-item__structure-item span {
+    width: calc(100% - 20px - .5em);
+}
+
+.tarif-item__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    align-items: center;
+    margin-bottom: 2em;
+    font-size: 14px;
+}
+
+.tarif-item__time {
+    line-height: 1.2;
+}
+
+.tarif-item__structure {
+    margin-top: 2em;
+}
+
+.tarif-item__level {
+    font-family: var(--font-body);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 10%;
+    display: inline-block;
+    padding: .5em 1em;
+    border-radius: 30px;
+    background: #e0d9cb;
+    border-radius: 30px;
+    border-top: 1px solid #c9c3b6;
+    border-bottom: 1px solid #fff;
+    line-height: 1;
+}
+
+.tarif-item {
+    position: relative;
+    border-radius: 15px;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.tarif-item.tarif-item--light {
+    background: rgba(255, 255, 255, .7);
+    border: 1px solid var(--white);
+}
+
+.tarif-item.tarif-item--accent {
+    background: var(--theme-color-primary);
+    color: var(--white);
+}
+
+.tarif-item.tarif-item--accent .tarif-item__content .tarif-item__top .tarif-item__level {
+    background: var(--theme-color-accent);
+    border-color: var(--theme-color-accent);
+}
+
+.tarif-item.tarif-item--accent .tarif-item__bottom a.tarif-item__link.button-dark {
+    background: var(--theme-color-accent);
+}
+
+.tarif-item.tarif-item--accent:before {
+    content: '';
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--theme-color-accent);
+}
+
+.tarif-item.tarif-item--accent .tarif-item__bottom::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background: repeating-linear-gradient(to right, #787575 0, #787575 7px, transparent 7px, transparent 10px);
+}
+
+.tarif-item.tarif-item--accent .tarif-item__content .tarif-item__structure li .tarif-item__structure-item__icon {
+    background: var(--theme-color-accent);
+}
+
+.tarif-item.tarif-item--accent .tarif-item__content .tarif-item__structure li .tarif-item__structure-item__icon svg path {
+    stroke: var(--white);
+}
+
+.tarif-item__structure {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.tarif-item__structure-item__icon {
+    width: 20px;
+    height: 20px;
+    background: var(--theme-color-light);
+    display: flex;
+    padding: 4px;
+    border-radius: 100%;
+}
+
+.tarif-item__structure-item {
+    display: flex;
+    gap: .5em;
+}
+
+.tarif-item.tarif-item {
+    gap: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarif-item__bottom {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.tarif-item__price {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.tarif-item__bottom::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background: repeating-linear-gradient(to right, #767676 0, #757575 7px, transparent 7px, transparent 10px);
+}
+
+@media (max-width: 992px) {
+    .tarif-item__bottom {
+        flex-direction: column;
+        gap: .5em;
+    }
+}
+
+@media (max-width: 800px) {
+    .tarifs-section__list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .tarif-item {
+        width: 100%;
+    }
+
+    .tarif-item__bottom {
+        flex-direction: row;
+    }
+
+    .tarif-item__structure {
+        gap: 1em;
+    }
+
+}

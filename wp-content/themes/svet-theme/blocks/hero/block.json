@@ -1,0 +1,76 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "svet-theme/hero",
+    "version": "1.0.0",
+    "title": "Hero",
+    "category": "design",
+    "icon": "cover-image",
+    "description": "Первый экран с заголовком, описанием, кнопками, цифрами и изображением.",
+    "textdomain": "svet-theme",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor.css",
+    "style": "file:./style.css",
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "Заголовок"
+        },
+        "titleAccent": {
+            "type": "string",
+            "default": "акцентный текст"
+        },
+        "description": {
+            "type": "string",
+            "default": "Краткое описание первого экрана."
+        },
+        "buttonPrimaryText": {
+            "type": "string",
+            "default": "Подробнее"
+        },
+        "buttonPrimaryUrl": {
+            "type": "string",
+            "default": "#"
+        },
+        "buttonSecondaryText": {
+            "type": "string",
+            "default": "Связаться"
+        },
+        "buttonSecondaryUrl": {
+            "type": "string",
+            "default": "#"
+        },
+        "numbers": {
+            "type": "array",
+            "default": [
+                {
+                    "value": "15",
+                    "suffix": "+",
+                    "label": "лет опыта"
+                },
+                {
+                    "value": "100",
+                    "suffix": "+",
+                    "label": "реализованных проектов"
+                },
+                {
+                    "value": "24",
+                    "suffix": "",
+                    "label": "часа на связь"
+                }
+            ]
+        },
+        "backgroundId": {
+            "type": "number",
+            "default": 0
+        },
+        "backgroundUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "backgroundAlt": {
+            "type": "string",
+            "default": ""
+        }
+    }
+}

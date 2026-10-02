@@ -1,0 +1,204 @@
+.container {
+    max-width: 1400px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   ГЛОБАЛЬНЫЕ CSS-ПЕРЕМЕННЫЕ ДЛЯ РЕДАКТОРА
+   (Загружаются из customizer.php через admin_head)
+   ========================================================================== */
+
+:root {
+    color-scheme: light;
+
+    /* Цвета — подставляются динамически через PHP */
+    --theme-color-primary: var(--theme-color-primary);
+    --theme-color-secondary: var(--theme-color-secondary);
+    --theme-color-accent: var(--theme-color-accent);
+    --theme-color-background: var(--theme-color-background);
+
+    /* Текст */
+    --theme-color-text: var(--theme-color-primary);
+}
+
+
+/* ==========================================================================
+   БАЗОВЫЕ СТИЛИ ДЛЯ GUTENBERG
+   ========================================================================== */
+
+body.block-editor-page,
+.editor-styles-wrapper {
+    background: var(--theme-color-background) !important;
+    color: var(--theme-color-text) !important;
+    font-family: var(--wp--preset--font-family--system, sans-serif);
+}
+
+/* Абзацы */
+.editor-styles-wrapper p {
+    margin-bottom: 1.3em;
+    line-height: 1.6;
+}
+
+/* Заголовки */
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+    color: var(--theme-color-primary);
+    font-weight: 700;
+    margin-top: 1.4em;
+    margin-bottom: 0.7em;
+    line-height: 1.25;
+}
+
+.editor-styles-wrapper h2 {
+    font-size: 48px;
+}
+
+.bradius16 {
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+/* Ссылки */
+.editor-styles-wrapper a {
+    color: var(--theme-color-accent);
+    text-decoration: underline;
+}
+
+.editor-styles-wrapper a:hover {
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   КНОПКИ
+   ========================================================================== */
+
+.wp-block-button__link {
+    background-color: var(--theme-color-primary);
+    color: #fff;
+    padding: 0.6em 1.2em;
+    border-radius: 4px;
+}
+
+.wp-block-button__link:hover {
+    background-color: var(--theme-color-secondary);
+}
+
+/* Вариант "outline" */
+.wp-block-button.is-style-outline .wp-block-button__link {
+    background: transparent;
+    border: 2px solid var(--theme-color-primary);
+    color: var(--theme-color-primary);
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+    border-color: var(--theme-color-secondary);
+    color: var(--theme-color-secondary);
+}
+
+/* ==========================================================================
+   ЦИТАТЫ
+   ========================================================================== */
+
+.wp-block-quote {
+    border-left: 4px solid var(--theme-color-primary);
+    padding-left: 1em;
+    color: var(--theme-color-secondary);
+}
+
+.wp-block-quote cite {
+    color: var(--theme-color-accent);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   ЛИСТЫ
+   ========================================================================== */
+
+.editor-styles-wrapper ul li::marker {
+    color: var(--theme-color-accent);
+}
+
+.editor-styles-wrapper ol li::marker {
+    color: var(--theme-color-primary);
+}
+
+/* ==========================================================================
+   ТАБЛИЦЫ
+   ========================================================================== */
+
+.wp-block-table td,
+.wp-block-table th {
+    border-color: var(--theme-color-secondary);
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* ==========================================================================
+   ПОЛЯ, ФОРМЫ
+   ========================================================================== */
+
+.editor-styles-wrapper input,
+.editor-styles-wrapper textarea {
+    border: 1px solid var(--theme-color-secondary);
+    padding: 6px 8px;
+    border-radius: 4px;
+}
+
+.editor-styles-wrapper input:focus,
+.editor-styles-wrapper textarea:focus {
+    border-color: var(--theme-color-primary);
+    box-shadow: 0 0 0 1px var(--theme-color-primary);
+}
+
+/* ==========================================================================
+   СПЕЦИАЛЬНО ДЛЯ БЛОКА Cover
+   ========================================================================== */
+
+.wp-block-cover__inner-container {
+    color: var(--theme-color-background);
+}
+
+/* ==========================================================================
+   СПЕЦИАЛЬНО ДЛЯ БЛОКА Separator
+   ========================================================================== */
+
+.wp-block-separator {
+    border-color: var(--theme-color-secondary);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   КОД / PRE
+   ========================================================================== */
+
+.wp-block-code,
+.wp-block-preformatted {
+    background: #f0f0f0;
+    padding: 1em;
+    border-radius: 4px;
+}
+
+
+.block-editor-iframe__body.editor-styles-wrapper {
+    padding: 0 20px;
+}
+
+.block-editor-block-list__block.wp-block.wp-block-columns {
+    border: 5px solid rgba(202, 202, 202, .4);
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block {
+    border: 2px dotted rgba(0, 0, 0, .4);
+}
+
+.block-editor-block-list__layout.block-editor-block-list__block.is-selected {
+    border: 2px solid var(--theme-color-accent);
+}

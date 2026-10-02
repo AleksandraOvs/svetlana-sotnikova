@@ -23,11 +23,16 @@ function svet_theme_enqueue_styles()
     wp_enqueue_style('svet_theme-stylesheet', get_template_directory_uri() . '/css/main-styles.css');
     wp_enqueue_style('programms-stylesheet', get_template_directory_uri() . '/css/programms.css');
     wp_enqueue_style('svet_theme-animations', get_template_directory_uri() . '/css/animations.css');
+    wp_enqueue_style('videos-styles', get_template_directory_uri() . '/css/videos.css');
+    wp_enqueue_style('broadcasts-styles', get_template_directory_uri() . '/css/broadcasts.css');
+    wp_enqueue_style('tarifs-styles', get_template_directory_uri() . '/css/tarifs.css');
 
     wp_enqueue_script('animations-script', get_stylesheet_directory_uri() . '/js/animations.js', array(), _S_VERSION, true);
     wp_enqueue_script('main-scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array(), _S_VERSION, true);
     wp_enqueue_script('faq-scripts', get_stylesheet_directory_uri() . '/js/faq.js', array(), _S_VERSION, true);
     wp_enqueue_script('sliders-script', get_stylesheet_directory_uri() . '/js/sliders.js', array(), _S_VERSION, true);
+    wp_enqueue_script('videos-script', get_stylesheet_directory_uri() . '/js/videos-scripts.js', array(), _S_VERSION, true);
+    wp_enqueue_script('broadcasts-script', get_stylesheet_directory_uri() . '/js/broadcast-scripts.js', array(), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'svet_theme_enqueue_styles');
 
@@ -184,3 +189,153 @@ add_action('manage_product_cat_custom_column', function ($content, $column, $ter
     }
     return $content;
 }, 10, 3);
+
+function mytheme_setup()
+{
+    // Добавляем поддержку блоков
+    add_theme_support('align-wide'); // Поддержка широкого и полного выравнивания
+    add_theme_support('editor-styles'); // Позволяет использовать кастомные стили в редакторе
+    add_theme_support('wp-block-styles'); // Подключает стили по умолчанию для блоков
+    add_theme_support('responsive-embeds'); // Адаптивные вставки (видео и др.)
+
+    // Подключаем CSS редактора
+    add_editor_style('css/style-editor.css');
+}
+add_action('after_setup_theme', 'mytheme_setup');
+
+function mytheme_enqueue_block_assets()
+{
+    wp_enqueue_style('mytheme-block-style', get_theme_file_uri('/css/style-editor.css'), array(), '1.0');
+}
+add_action('enqueue_block_assets', 'mytheme_enqueue_block_assets');
+
+/**
+ * BLOCKS
+ */
+
+add_action('init', function () {
+    register_block_type(
+        get_template_directory() . '/blocks/hero'
+    );
+});
+
+
+function get_broadcast_embed_url($url)
+{
+
+    if (!$url) {
+        return '';
+    }
+
+    $url = trim($url);
+
+    $parsed_url = wp_parse_url($url);
+
+    if (!$parsed_url || empty($parsed_url['host'])) {
+        return '';
+    }
+
+    $host = strtolower($parsed_url['host']);
+    $path = $parsed_url['path'] ?? '';
+
+    /*
+     * YouTube
+     */
+
+    if (
+        str_contains($host, 'youtube.com') ||
+        str_contains($host, 'youtu.be')
+    ) {
+
+        $video_id = '';
+
+        // youtu.be/VIDEO_ID
+        if (str_contains($host, 'youtu.be')) {
+
+            $video_id = trim($path, '/');
+
+            $video_id = explode('/', $video_id)[0];
+        }
+
+        // youtube.com/watch?v=VIDEO_ID
+        if (
+            str_contains($host, 'youtube.com') &&
+            !empty($parsed_url['query'])
+        ) {
+
+            parse_str($parsed_url['query'], $query);
+
+            if (!empty($query['v'])) {
+                $video_id = $query['v'];
+            }
+        }
+
+        // youtube.com/embed/VIDEO_ID
+        if (str_contains($path, '/embed/')) {
+
+            $parts = explode('/embed/', $path);
+
+            if (!empty($parts[1])) {
+                $video_id = explode('/', $parts[1])[0];
+            }
+        }
+
+        if ($video_id) {
+            return 'https://www.youtube.com/embed/' . $video_id . '?autoplay=1';
+        }
+    }
+
+
+    /*
+     * Rutube
+     *
+     * https://rutube.ru/video/VIDEO_ID/
+     */
+
+    if (str_contains($host, 'rutube.ru')) {
+
+        if (preg_match(
+            '#/video/([a-zA-Z0-9]+)#',
+            $path,
+            $matches
+        )) {
+
+            return 'https://rutube.ru/play/embed/' . $matches[1] . '/';
+        }
+    }
+
+
+    /*
+     * VK Видео
+     *
+     * https://vk.com/video-123_456
+     * https://vkvideo.ru/video-123_456
+     */
+
+    if (
+        str_contains($host, 'vk.com') ||
+        str_contains($host, 'vkvideo.ru')
+    ) {
+
+        if (preg_match(
+            '#/video(-?\d+_\d+)#',
+            $path,
+            $matches
+        )) {
+
+            return 'https://vk.com/video_ext.php?oid=' .
+                explode('_', ltrim($matches[1], '-'))[0] .
+                '&id=' .
+                explode('_', $matches[1])[1];
+        }
+    }
+
+
+    /*
+     * Остальные сервисы
+     *
+     * Instagram, обычные ссылки и т. д.
+     */
+
+    return '';
+}

@@ -94,63 +94,184 @@ add_action('carbon_fields_register_fields', function () {
 
         ->add_tab('Программы', [
 
+            Field::make('text', 'programms_block_subtitle', 'Название раздела')
+                ->set_width(33),
             Field::make('text', 'programms_block_title', 'Заголовок часть 1')
-                ->set_width(50),
-            Field::make('text', 'programms_block_title_2', 'Заголовок часть акцент')
-                ->set_width(50),
+                ->set_width(33),
+            Field::make('text', 'programms_block_title_accent', 'Заголовок часть акцент')
+                ->set_width(33),
 
             Field::make('rich_text', 'programms_block_title_description', 'краткое описание')
-                ->set_width(50),
+                ->set_width(100),
 
         ])
         // ------------------------
-        // Вкладка PROJECTS
+        // Вкладка Дом в котором тебя принимают
         // ------------------------
 
-        ->add_tab('Проекты', [
+        ->add_tab('Блок с темным фоном и фото', [
 
             Field::make(
                 'text',
-                'crb_projects_block_title',
-                'Заголовок блока Проекты'
+                'crb_home_block_title',
+                'Заголовок блока'
             )
+                ->set_width(33),
+            Field::make(
+                'text',
+                'crb_home_block_title_accent',
+                'Акцентная часть заголовка'
+            )
+                ->set_width(33),
+            Field::make(
+                'text',
+                'crb_home_block_title_description',
+                'Краткое описание'
+            )
+                ->set_width(33),
+            Field::make(
+                'rich_text',
+                'crb_home_block_content',
+                'Контент блока'
+            )
+                ->set_width(70),
+            Field::make(
+                'image',
+                'crb_home_block_image',
+                'Фото для блока'
+            )
+                ->set_width(70),
+
+
+        ])
+
+        // ------------------------
+        // Вкладка Обо мне
+        // ------------------------
+
+        ->add_tab('Блок «Обо мне»', [
+
+            Field::make('text', 'about_me_block_subtitle', 'Название раздела')
+                ->set_width(33),
+            Field::make('text', 'about_me_block_title', 'Заголовок часть 1')
+                ->set_width(33),
+            Field::make('text', 'about_me_block_title_accent', 'Заголовок часть акцент')
+                ->set_width(33),
+            Field::make('rich_text', 'about_me_block_title_description', 'Краткое описание')
+                ->set_width(33),
+
+            Field::make('rich_text', 'about_me_block_text_content', 'Контент блока')
+                ->set_width(100),
+            Field::make('complex', 'about_me_photos', 'Фотографии для блока')
+                ->set_layout('tabbed-vertical')
+                ->help_text('Добавьте не более 3х фото для отображения с правой стороны блока')
+                ->set_max(3)
+                ->add_fields([
+
+                    Field::make('image', 'about_me_photo', 'Фотография')
+                        ->set_width(50),
+                    Field::make('rich_text', 'about_me_photo_sign', 'Подпись к фото')
+                        ->set_width(50),
+                ]),
+
+            Field::make('complex', 'about_me_list', 'Пункты')
+                ->set_layout('tabbed-vertical')
+                ->add_fields([
+                    Field::make('rich_text', 'about_me_list_item', 'Текст')
+                        ->set_width(50),
+                ])
+        ])
+
+        // ------------------------
+        // Блок Точка узнавания
+        // ------------------------
+        ->add_tab('Блок «Точка узнавания»', [
+            Field::make('text', 'point_rec_block_subtitle', 'Название раздела')
+                ->set_width(33),
+            Field::make('text', 'point_rec_block_title', 'Заголовок часть 1')
+                ->set_width(33),
+            Field::make('text', 'point_rec_block_title_accent', 'Заголовок часть акцент')
+                ->set_width(33),
+            Field::make('rich_text', 'point_rec_block_title_description', 'Краткое описание')
+                ->set_width(33),
+
+            Field::make('text', 'point_rec_block_list_title', 'Список#1 - Заголовок')
+                ->set_width(50),
+            Field::make('complex', 'point_rec_block_list_first', 'Пункты списка #1')
+                ->set_layout('tabbed-vertical')
+                ->add_fields([
+                    Field::make('rich_text', 'point_rec_block_item', 'Текст пункта')
+                ]),
+
+            Field::make('text', 'point_rec_block_list_title_second', 'Список#2 - Заголовок')
+                ->set_width(50),
+            Field::make('complex', 'point_rec_block_list_second', 'Пункты списка #2')
+                ->set_layout('tabbed-vertical')
+                ->add_fields([
+                    Field::make('rich_text', 'point_rec_block_item_second', 'Краткое описание')
+                ]),
+
+            Field::make('text', 'point_rec_problems_block_subtitle', 'Название раздела')
+                ->set_width(33),
+            Field::make('text', 'point_rec_problems_block_title', 'Заголовок часть 1')
+                ->set_width(33),
+            Field::make('text', 'point_rec_problems_block_title_accent', 'Заголовок часть акцент')
+                ->set_width(33),
+            Field::make('rich_text', 'point_rec_problems_block_title_description', 'Краткое описание')
                 ->set_width(100),
 
-            Field::make(
-                'complex',
-                'crb_about_projects_list',
-                'О проектах'
-            )
+            Field::make('complex', 'point_rec_problems_block_list', 'Проблемы')
                 ->add_fields([
-                    Field::make(
-                        'text',
-                        'crb_about_projects_list_item',
-                        'Пункт проекта'
-                    )
-                        ->set_width(100),
+                    Field::make('text', 'point_rec_problems_block_list_item', 'Проблема')
                 ]),
 
-            Field::make(
-                'complex',
-                'crb_projects_list',
-                'Слайды проектов'
-            )
-                ->add_fields([
+            Field::make('rich_text', 'point_rec_problems_block_content', 'Текстовый контент блока')
+                ->set_width(100),
 
-                    Field::make(
-                        'association',
-                        'projects',
-                        'Проекты в слайде'
-                    )
-                        ->set_types([
-                            [
-                                'type'      => 'post',
-                                'post_type' => 'projects',
-                            ],
-                        ])
-                        ->set_max(2)
-                        ->set_width(100),
-                ]),
+        ])
+
+        // ------------------------
+        // Блок с Видеоматериалами
+        // ------------------------
+        ->add_tab('Блок «Лучшие видеоматериалы»', [
+            Field::make('text', 'videos_block_subtitle', 'Название раздела')
+                ->set_width(33),
+            Field::make('text', 'videos_block_title', 'Заголовок часть 1')
+                ->set_width(33),
+            Field::make('text', 'videos_block_title_accent', 'Заголовок часть акцент')
+                ->set_width(33),
+            Field::make('rich_text', 'videos_block_title_description', 'Краткое описание')
+                ->set_width(33),
+
+        ])
+
+        // ------------------------
+        // Блок с Эфирами и обсуждениями
+        // ------------------------
+        ->add_tab('Блок «Эфиры и обсуждения»', [
+            Field::make('text', 'broadcasts_block_subtitle', 'Название раздела')
+                ->set_width(33),
+            Field::make('text', 'broadcasts_block_title', 'Заголовок часть 1')
+                ->set_width(33),
+            Field::make('text', 'broadcasts_block_title_accent', 'Заголовок часть акцент')
+                ->set_width(33),
+            Field::make('rich_text', 'broadcasts_block_title_description', 'Краткое описание')
+                ->set_width(33),
+
+        ])
+
+        // ------------------------
+        // Блок Тарифов
+        // ------------------------
+        ->add_tab('Блок «Тарифы»', [
+            Field::make('text', 'tarifs_block_subtitle', 'Название раздела')
+                ->set_width(33),
+            Field::make('text', 'tarifs_block_title', 'Заголовок часть 1')
+                ->set_width(33),
+            Field::make('text', 'tarifs_block_title_accent', 'Заголовок часть акцент')
+                ->set_width(33),
+            Field::make('rich_text', 'tarifs_block_title_description', 'Краткое описание')
+                ->set_width(33),
 
         ])
 
@@ -184,178 +305,8 @@ add_action('carbon_fields_register_fields', function () {
                     ],
                 ])
                 ->set_max(1),
-        ])
-
-        // ------------------------
-        // О нашей работе
-        // ------------------------
-
-
-        ->add_tab('Как мы работаем', [
-
-            Field::make('text', 'crb_about_works_title', 'Заголовок')
-                ->set_width(50),
-            Field::make('text', 'crb_about_works_subtitle', 'Подзаголовок')
-                ->set_width(50),
-            Field::make('complex', 'crb_about_works_list', 'Текстовые пункты')
-                ->set_layout('tabbed-vertical')
-                ->add_fields([
-
-                    Field::make('text', 'crb_about_works_list_item_title', 'Заголовок пункта')
-                        ->set_width(50),
-                    Field::make('rich_text', 'crb_about_works_list_item_text', 'Текст')
-                        ->set_width(50),
-                ]),
-            Field::make('image', 'crb_about_works_image', 'Изображение для блока')
-                ->set_width(50),
-
-
-        ])
-
-        // ------------------------
-        // PARTNERS
-        // ------------------------
-
-        ->add_tab('Наши партнеры', [
-            Field::make('text', 'title', 'Заголовок H2')
-                ->set_width(50),
-            Field::make('text', 'subtitle', 'Подзаголовок')
-                ->set_width(50),
-            Field::make('complex', 'slider-partners', 'Слайды')
-                ->add_fields([
-                    Field::make('text', 'crb_partner_name', 'Название компании')
-                        ->set_width(50),
-
-                    Field::make('image', 'crb_partner_logo', 'Логотип')
-                        ->set_width(50),
-
-                ]),
-
-        ])
-
-        // ------------------------
-        // ЗАДАЧИ
-        // ------------------------
-
-        ->add_tab('Задачи', [
-            Field::make('text', 'tasks_title', 'Заголовок H2')
-                ->set_width(50),
-
-            Field::make('complex', 'crb_tasks_list', 'Список задач')
-                ->add_fields([
-                    Field::make('text', 'crb_tasks_list_title', 'Заголовок задачи')
-                        ->set_width(50),
-
-                    Field::make('rich_text', 'crb_tasks_list_text', 'Текст задачи')
-                        ->set_width(50),
-
-                ]),
-
-        ])
-
-        // ------------------------
-        // ИНФОБЛОК
-        // ------------------------
-
-        ->add_tab('Инф. блок', [
-            Field::make('text', 'info_block_title', 'Заголовок H2')
-                ->set_width(50),
-            Field::make('text', 'info_block_description', 'Подзаголовок')
-                ->set_width(50),
-
-            Field::make('complex', 'info_block_list', 'Список')
-                ->add_fields([
-                    Field::make('text', 'info_block_list_item_title', 'Заголовок пункта')
-                        ->set_width(50),
-
-                    Field::make('rich_text', 'info_block_list_item_text', 'Текст пункта')
-                        ->set_width(50),
-
-                ]),
-
-            Field::make('image', 'crb_info_block_image', 'Изображение для блока')
-                ->set_width(50),
-
-        ])
-
-        // ------------------------
-        // ПРЕИМУЩЕСТВА
-        // ------------------------
-
-        ->add_tab('Преимущества', [
-            Field::make('text', 'adv_block_title', 'Заголовок H2')
-                ->set_width(50),
-
-            Field::make('complex', 'adv_block_list', 'Список')
-                ->add_fields([
-                    Field::make('rich_text', 'adv_block_list_item_title', 'Заголовок пункта')
-                        ->set_width(50),
-
-                    Field::make('rich_text', 'adv_block_list_item_text', 'Текст пункта')
-                        ->set_width(50),
-
-                ]),
-
-        ])
-
-        ->add_tab('Благодарственные письма', [
-            Field::make('text', 'reviews_title', 'Заголовок H2')
-                ->set_width(50),
-
-            Field::make('complex', 'reviews_list', 'Письма')
-                ->add_fields([
-                    Field::make('image', 'review_item', 'Изображение')
-                        ->set_width(50),
-                ]),
-        ])
-
-        ->add_tab('Этапы работ', [
-            Field::make('text', 'how_title', 'Заголовок H2')
-                ->set_width(50),
-
-            Field::make('complex', 'how_list', 'Список')
-                ->set_layout('tabbed-vertical')
-                ->add_fields([
-                    Field::make('text', 'how_list_item_title', 'Заголовок пункта')
-                        ->set_width(50),
-                    Field::make('rich_text', 'how_list_item', 'Пункт')
-                        ->set_width(50),
-
-                ]),
-
-        ])
-
-        // ------------------------
-        // Блок с формой о/с
-        // ------------------------
-
-        ->add_tab('Форма обратной связи #2', [
-            Field::make(
-                'text',
-                'crb_feedback_block2_title',
-                'Заголовок блока'
-            )
-                ->set_width(50),
-            Field::make(
-                'rich_text',
-                'crb_feedback_block2_description',
-                'Описание блока'
-            )
-                ->set_width(50),
-
-            Field::make(
-                'association',
-                'crb_feedback2_form',
-                'Форма обратной связи'
-            )
-                ->set_types([
-                    [
-                        'type'      => 'post',
-                        'post_type' => 'wpcf7_contact_form',
-                    ],
-                ])
-                ->set_max(1),
         ]);
+
 
 
 
@@ -380,18 +331,83 @@ add_action('carbon_fields_register_fields', function () {
     // ]);
 
     // ------------------------
-    // SERVICES
+    // VIDEOS
     // ------------------------
-    Container::make('post_meta', 'Подробности услуги')
-        ->where('post_type', '=', 'services')
+    Container::make('post_meta', 'Данные видео')
+        ->where('post_type', '=', 'videos')
         ->add_fields([
 
-            Field::make('complex', 'service_details', 'Подробности')
-                //->set_layout('tabbed-vertical')
-                ->add_fields([
-                    Field::make('text', 'text', 'Значение')
-                        ->set_width(100),
-                ]),
+            Field::make('text', 'video_url', 'Ссылка на видео')
+                ->set_width(50)
+                ->set_help_text(
+                    'Вставьте ссылку на видео с YouTube, VK Видео, Rutube и т. д.'
+                ),
+
+            Field::make('image', 'video_placeholder', 'Превью видео')
+                ->set_width(50)
+                ->set_value_type('url')
+                ->set_help_text(
+                    'Если изображение не указано, будет использовано изображение по умолчанию.'
+                ),
+
+            Field::make('rich_text', 'video_content', 'Текстовый контент'),
+
+        ]);
+
+    // ------------------------
+    // Broadcasts
+    // ------------------------
+
+    Container::make('post_meta', 'Данные эфира')
+        ->where('post_type', '=', 'broadcasts')
+        ->add_fields([
+
+            Field::make(
+                'text',
+                'broadcast_url',
+                'Ссылка на эфир'
+            )
+                ->set_help_text(
+                    'Ссылка на YouTube, VK Видео, Rutube и т. д.'
+                ),
+
+            Field::make(
+                'select',
+                'broadcast_show_title',
+                'Отображать заголовок'
+            )
+                ->set_options([
+                    'show' => 'Отображать заголовок',
+                    'hide' => 'Не отображать заголовок',
+                ])
+                ->set_default_value('show'),
+
+            Field::make(
+                'image',
+                'broadcast_placeholder',
+                'Превью эфира'
+            )
+                ->set_value_type('url')
+                ->set_help_text(
+                    'Если изображение не указано, будет использовано изображение по умолчанию.'
+                ),
+
+            Field::make(
+                'rich_text',
+                'broadcast_content',
+                'Текстовый контент'
+            ),
+
+            Field::make(
+                'select',
+                'broadcast_show_link',
+                'Ссылка на страницу эфира'
+            )
+                ->set_options([
+                    'show' => 'Отображать ссылку',
+                    'hide' => 'Не отображать ссылку',
+                ])
+                ->set_default_value('show'),
 
         ]);
 
@@ -439,6 +455,41 @@ add_action('carbon_fields_register_fields', function () {
                 ])
                 ->set_default_value('light'),
 
+        ]);
+
+    // ------------------------
+    // TARIFS   
+    // ------------------------
+    Container::make('post_meta', 'Тариф')
+        ->where('post_type', '=', 'tarifs')
+        ->add_fields([
+
+            Field::make('text', 'crb_tarif_level', 'Уровень тарифа')
+                ->set_width(33),
+            Field::make('text', 'crb_tarif_time', 'Объем и формат')
+                ->set_width(33),
+            Field::make('rich_text', 'crb_tarif_desc', 'Краткое описание')
+                ->set_width(33),
+
+            Field::make('complex', 'tarif_structure', 'Структура тарифа')
+                ->add_fields([
+                    Field::make('text', 'tarif_structure_item', 'Пункт')
+                ]),
+
+            Field::make('text', 'crb_tarif_price', 'Цена тарифа')
+                ->set_width(33),
+            Field::make('text', 'crb_tarif_link', 'Ссылка на запись')
+                ->set_width(33),
+            Field::make('text', 'crb_tarif_link_text', 'Текст ссылки')
+                ->set_width(33),
+
+            Field::make('select', 'crb_tarif_style', 'Стиль карточки')
+                ->set_width(100)
+                ->set_options([
+                    'accent' => 'Accent',
+                    'light'  => 'Light',
+                ])
+                ->set_default_value('light'),
         ]);
 
     Container::make('theme_options', 'Контакты')

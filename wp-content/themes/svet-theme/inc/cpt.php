@@ -54,54 +54,142 @@ function register_programms_cpt()
 add_action('init', 'register_programms_cpt');
 
 /**
- *  SERVICES
+ *  VIDEOS
  */
 
-function register_services_cpt()
+function register_videos_cpt()
 {
-    register_post_type('services', [
+
+    register_post_type('videos', [
         'labels' => [
-            'name'               => 'Услуги',
-            'singular_name'      => 'Услуга',
-            'menu_name'          => 'Услуги',
-            'add_new'            => 'Добавить услугу',
-            'add_new_item'       => 'Добавить новую услугу',
-            'edit_item'          => 'Редактировать услугу',
-            'new_item'           => 'Новая услуга',
-            'view_item'          => 'Просмотреть услугу',
-            'search_items'       => 'Искать услуги',
-            'not_found'          => 'Услуги не найдены',
-            'not_found_in_trash' => 'В корзине услуг нет',
+            'name'               => 'Лучшие видеоматериалы',
+            'singular_name'      => 'Видео',
+            'menu_name'          => 'Видео',
+            'add_new'            => 'Добавить видео',
+            'add_new_item'       => 'Добавить видео',
+            'edit_item'          => 'Редактировать видео',
+            'new_item'           => 'Новое видео',
+            'view_item'          => 'Просмотреть видео',
+            'search_items'       => 'Поиск видео',
+            'not_found'          => 'Видео не найдены',
+            'not_found_in_trash' => 'Видео в корзине не найдены',
         ],
 
-        'public'       => true,
-        'show_ui'      => true,
-        'show_in_menu' => true,
+        'public'             => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_rest'       => true,
 
-        'menu_position' => 6,
-        'menu_icon'     => 'dashicons-portfolio',
+        'menu_position'      => 20,
+        'menu_icon'          => 'dashicons-video-alt3',
 
-        'supports' => [
+        'supports'           => [
             'title',
-            'editor',
-            'thumbnail',
-            'excerpt',
         ],
 
-        'taxonomies' => [
-            'category',
-            'post_tag',
-        ],
+        // Архив
+        'has_archive'        => false,
 
-        'has_archive' => true,
-
-        'rewrite' => [
-            'slug'       => 'services',
+        // URL:
+        // /videos/
+        // /videos/nazvanie-video/
+        'rewrite'            => [
+            'slug'       => 'videos',
             'with_front' => false,
         ],
 
-        'show_in_rest' => true,
+        'publicly_queryable' => true,
     ]);
 }
 
-add_action('init', 'register_services_cpt');
+add_action('init', 'register_videos_cpt');
+
+function register_broadcasts_cpt()
+{
+    register_post_type('broadcasts', [
+        'labels' => [
+            'name'               => 'Эфиры',
+            'singular_name'      => 'Эфир',
+            'menu_name'          => 'Эфиры',
+            'add_new'            => 'Добавить эфир',
+            'add_new_item'       => 'Добавить эфир',
+            'edit_item'          => 'Редактировать эфир',
+            'new_item'           => 'Новый эфир',
+            'view_item'          => 'Просмотреть эфир',
+            'search_items'       => 'Поиск эфиров',
+            'not_found'          => 'Эфиры не найдены',
+            'not_found_in_trash' => 'Эфиры в корзине не найдены',
+        ],
+
+        'public'             => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_rest'       => true,
+        'publicly_queryable' => true,
+
+        'has_archive' => false,
+
+        'rewrite' => [
+            'slug'       => 'broadcasts',
+            'with_front' => false,
+        ],
+
+        'menu_icon' => 'dashicons-video-alt2',
+
+        'supports' => [
+            'title',
+        ],
+    ]);
+}
+
+add_action('init', 'register_broadcasts_cpt');
+
+/**
+ * TARIFS
+ */
+
+function register_tarifs_cpt()
+{
+    register_post_type('tarifs', [
+        'labels' => [
+            'name'               => 'Тарифы',
+            'singular_name'      => 'Тариф',
+            'menu_name'          => 'Тарифы',
+            'add_new'            => 'Добавить тариф',
+            'add_new_item'       => 'Добавить тариф',
+            'edit_item'          => 'Редактировать тариф',
+            'new_item'           => 'Новый тариф',
+            'view_item'          => 'Просмотреть тариф',
+            'search_items'       => 'Поиск тарифов',
+            'not_found'          => 'Тарифы не найдены',
+            'not_found_in_trash' => 'Тарифы в корзине не найдены',
+        ],
+
+        'public'             => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_rest'       => true,
+
+        'menu_position'      => 20,
+        'menu_icon'          => 'dashicons-money-alt',
+
+        'supports'           => [
+            'title',
+        ],
+
+        // Архива CPT нет
+        'has_archive'        => true,
+
+        // URL:
+        // /tarifs/
+        // /tarifs/nazvanie-tarifa/
+        'rewrite'            => [
+            'slug'       => 'tarifs',
+            'with_front' => false,
+        ],
+
+        'publicly_queryable' => true,
+    ]);
+}
+
+add_action('init', 'register_tarifs_cpt');

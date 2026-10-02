@@ -105,38 +105,6 @@
             <?php echo '<div class="hero__image"><img  data-scroll-animation="brightness" src="' . esc_url($background) . '" alt="background"></div>'; ?>
         <?php endif; ?>
 
-        <!-- <div class="hero-inner__advs" data-scroll-animation="fade-right">
-            <?php
-            //$hero_advs = carbon_get_post_meta(get_the_ID(), 'hero_advs');
-            ?>
-            <?php //if ($hero_advs) : 
-            ?>
-
-
-                <ul class="hero-advs list-style-markers">
-
-                    <?php //foreach ($hero_advs as $adv) : 
-                    ?>
-
-                        <?php //if (!empty($adv['text'])) : 
-                        ?>
-                            <li class="hero-advs__item">
-                                <?php //echo esc_html($adv['text']); 
-                                ?>
-                            </li>
-                        <?php //endif; 
-                        ?>
-
-                    <?php //endforeach; 
-                    ?>
-
-                </ul>
-
-
-            <?php //endif; 
-            ?>
-        </div> -->
-
     </div>
 
 

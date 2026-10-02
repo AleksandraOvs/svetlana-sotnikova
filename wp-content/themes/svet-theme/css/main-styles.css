@@ -87,8 +87,8 @@ body {
 }
 
 .wrapper .page-content {
-    padding-bottom: 3vh;
-    padding-top: calc(80px + 7vh);
+    padding-bottom: 10vh;
+    padding-top: 80px;
 }
 
 main {
@@ -196,7 +196,8 @@ button {
 }
 
 .button,
-.button-outline {
+.button-outline,
+.button-dark {
     position: relative;
     padding: 10px 20px;
     overflow: hidden;
@@ -246,6 +247,18 @@ button {
 
 .button-outline::after {
     content: none;
+}
+
+.button-dark {
+    background: var(--theme-color-primary);
+    color: var(--white);
+    border-color: var(--theme-color-primary);
+}
+
+.button-dark:hover {
+    background: var(--theme-color-accent);
+    border-color: var(--theme-color-accent);
+    color: var(--white);
 }
 
 .button:hover {
@@ -384,7 +397,6 @@ section.pt-10 {
 
 .site-breadcrumbs * {
     font-size: 14px;
-    text-transform: uppercase;
     color: var(--theme-color-primary);
 }
 
@@ -410,6 +422,10 @@ section.page-title-block {
 
 .page-title__description p {
     line-height: 1.5;
+}
+
+.site-breadcrumbs {
+    margin-bottom: 1em;
 }
 
 /* =========================================
@@ -1175,7 +1191,7 @@ section.home:before {
     font-size: 14px;
 }
 
-.list-head {
+.list-content h4 {
     font-size: 18px;
     font-weight: 600;
     font-family: var(--font-heading);
@@ -1221,7 +1237,7 @@ section.home:before {
     position: relative;
     background: rgba(255, 255, 255, .7);
     border-radius: 15px;
-    padding: 2em 1em;
+    padding: 2em;
     font-size: 14px;
 }
 
@@ -2715,7 +2731,7 @@ footer.footer * .menu {
     .hero__image img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         object-position: center;
     }
 
