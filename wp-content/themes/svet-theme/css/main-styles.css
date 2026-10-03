@@ -53,8 +53,7 @@
 }
 
 .fixed-container {
-    /* width: var(--fixed-container-width); */
-    width: 100%;
+    width: var(--fixed-container-width);
     margin: 0 auto;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
@@ -855,6 +854,7 @@ ul.main-menu li a:hover::before {
     padding-right: var(--container-padding);
     min-height: 100%;
     align-items: stretch;
+    max-width: 1440px;
 }
 
 .hero__inner__content {
