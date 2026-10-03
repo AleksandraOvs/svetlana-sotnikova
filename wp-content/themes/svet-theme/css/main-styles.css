@@ -1520,6 +1520,7 @@ section.home:before {
 }
 
 .faq-items__list li {
+    width: 100%;
     padding: 1em;
     border-bottom: 1px solid #dfdfdf;
     background: rgba(255, 255, 255, .7);
