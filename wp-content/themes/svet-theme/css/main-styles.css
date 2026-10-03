@@ -3143,7 +3143,7 @@ footer.footer * .menu {
 
     section.home::before {
         content: 'Цен\Aнос\Aти';
-        font-size: 18vw;
+        font-size: 22vw;
         display: block;
         color: var(--theme-color-light);
         text-transform: uppercase;
