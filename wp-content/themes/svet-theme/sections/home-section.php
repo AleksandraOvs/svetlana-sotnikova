@@ -17,53 +17,51 @@ $image_alt = $image_id
 ?>
 
 <section class="home">
+    <div class="fixed-container">
+        <div class="section-home__inner">
+            <div class="section-home__inner__content">
+                <div class="section-title__inner _section-home__title">
 
-    <?php if ($image_url) : ?>
-        <img
-            class="home-section__img"
-            data-scroll-animation="brightness"
-            src="<?php echo esc_url($image_url); ?>"
-            alt="<?php echo esc_attr($image_alt); ?>">
-    <?php endif; ?>
+                    <?php if ($title || $title_accent) : ?>
+                        <h2 data-scroll-animation="fade-left">
 
-    <div class="section-home__inner">
+                            <?php if ($title) : ?>
+                                <?php echo esc_html($title); ?>
+                            <?php endif; ?>
 
-        <div class="fixed-container">
+                            <?php if ($title_accent) : ?>
+                                <span class="accent-text">
+                                    <?php echo esc_html($title_accent); ?>
+                                </span>
+                            <?php endif; ?>
 
-            <div class="section-title__inner _section-home__title">
+                        </h2>
+                    <?php endif; ?>
 
-                <?php if ($title || $title_accent) : ?>
-                    <h2 data-scroll-animation="fade-left">
+                    <?php if ($description) : ?>
+                        <div
+                            class="section-title__description"
+                            data-scroll-animation="fade-right">
+                            <?php echo esc_html($description); ?>
+                        </div>
+                    <?php endif; ?>
 
-                        <?php if ($title) : ?>
-                            <?php echo esc_html($title); ?>
-                        <?php endif; ?>
+                </div>
 
-                        <?php if ($title_accent) : ?>
-                            <span class="accent-text">
-                                <?php echo esc_html($title_accent); ?>
-                            </span>
-                        <?php endif; ?>
-
-                    </h2>
-                <?php endif; ?>
-
-                <?php if ($description) : ?>
-                    <div
-                        class="section-title__description"
-                        data-scroll-animation="fade-right">
-                        <?php echo esc_html($description); ?>
+                <?php if ($content) : ?>
+                    <div class="section-home__inner__text">
+                        <?php echo wpautop(wp_kses_post($content)); ?>
                     </div>
                 <?php endif; ?>
-
             </div>
 
-            <?php if ($content) : ?>
-                <div class="section-home__inner__content">
-                    <?php echo wpautop(wp_kses_post($content)); ?>
-                </div>
+            <?php if ($image_url) : ?>
+                <img
+                    class="home-section__img"
+                    data-scroll-animation="brightness"
+                    src="<?php echo esc_url($image_url); ?>"
+                    alt="<?php echo esc_attr($image_alt); ?>">
             <?php endif; ?>
-
         </div>
 
     </div>

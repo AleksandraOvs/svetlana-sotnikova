@@ -1107,10 +1107,115 @@ h1.hero__title span {
 ========================================= */
 section.home {
     position: relative;
-    padding-top: 10vh;
+    padding-top: 0;
     padding-bottom: 0;
+    background: var(--theme-color-primary);
 }
 
+section.home::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+
+.section-home__inner {
+    display: flex;
+    gap: 10em;
+    align-items: center;
+    z-index: 5;
+    position: relative;
+}
+
+.section-home__inner__content {
+    width: calc(60% - 10em);
+}
+
+.home-section__img.is-visible {
+    width: 40%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}
+
+._section-home__title h2 {
+    color: var(--white);
+}
+
+._section-home__title h2 {
+    color: var(--white);
+}
+
+.section-title__inner._section-home__title {
+    flex-direction: column;
+    display: flex;
+    gap: 0;
+}
+
+.section-title__inner._section-home__title h2 {
+    text-transform: none;
+}
+
+.section-title__inner._section-home__title * {
+    color: var(--white);
+}
+
+.section-title__inner._section-home__title .accent-text {
+    color: var(--theme-color-accent);
+}
+
+.section-home__inner__content {
+    color: var(--white);
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.section-home__inner:before {
+    content: 'Цен\Aнос\Aти';
+    font-size: 5vw;
+    display: block;
+    color: var(--theme-color-light);
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    z-index: 2;
+    position: absolute;
+    top: -15px;
+    left: 40px;
+    mix-blend-mode: overlay;
+    z-index: 1;
+    width: 15vw;
+    height: 100%;
+    line-height: 1;
+}
+
+section.home::before {
+    content: '';
+    width: 100%;
+    height: 3vh;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+section.home:after {
+    content: '';
+    width: 100%;
+    height: 3vh;
+    display: block;
+    position: absolute;
+    top: unset;
+    bottom: 0;
+    left: 0;
+    background: var(--theme-color-light);
+    opacity: 1;
+}
+
+/*
 .home-section__img {
     position: absolute;
     bottom: 0;
@@ -1153,20 +1258,7 @@ section.home {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
 }
 
-section.home:before {
-    content: 'Ценности';
-    font-size: 11vw;
-    display: block;
-    color: var(--theme-color-light);
-    text-transform: uppercase;
-    font-family: var(--font-heading);
-    z-index: 2;
-    position: absolute;
-    top: 37%;
-    left: 36%;
-    mix-blend-mode: overlay;
-    z-index: 1;
-}
+
 
 .section-home__inner {
     padding: 5vh 0;
@@ -1206,7 +1298,7 @@ section.home:before {
 
 .section-home__inner__content {
     margin-top: 2em;
-}
+} */
 
 /* =========================================
    About me section
@@ -1412,6 +1504,9 @@ section.home:before {
 /* =========================================
    Metodology block
 ========================================= */
+#metodology {
+    padding-top: 0;
+}
 
 .metodology__inner {
     display: grid;
@@ -2498,6 +2593,14 @@ footer.footer * .menu {
         gap: 1em;
     }
 
+    .section-home__inner {
+        gap: 2em;
+    }
+
+    .section-home__inner__content {
+        width: calc(60% - 2em);
+    }
+
 
     .footer-inner {}
 
@@ -2789,6 +2892,43 @@ footer.footer * .menu {
         padding-bottom: 0;
     }
 
+    .section-home__inner {
+        flex-direction: column;
+    }
+
+    .section-home__inner__content {
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    .home-section__img.is-visible {
+        width: 100%;
+    }
+
+    section.home::after {
+        height: 25vh;
+    }
+
+    .section-home__inner::before {
+        content: 'Цен\Aнос\Aти';
+        font-size: 14vw;
+        display: block;
+        color: var(--theme-color-light);
+        text-transform: uppercase;
+        font-family: var(--font-heading);
+        z-index: 2;
+        position: absolute;
+        top: unset;
+        left: 0;
+        mix-blend-mode: overlay;
+        z-index: 1;
+        width: 30vw;
+        height: 100%;
+        line-height: 1;
+        bottom: 0;
+        height: max-content;
+    }
+
     .point-rec__inner .section-title {
         width: 100%;
     }
@@ -2927,8 +3067,6 @@ footer.footer * .menu {
         width: 100%;
     }
 
-
-
     .mob-menu ul {
         list-style: none;
         width: 100%;
@@ -2972,6 +3110,8 @@ footer.footer * .menu {
     .form-submit p span {
         text-align: center !important;
     }
+
+
 
     .reviews-section__slider.swiper {
         overflow: visible;
@@ -3121,17 +3261,6 @@ footer.footer * .menu {
         overflow: hidden;
     }
 
-    .home-section__img {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        right: -18%;
-        height: 440px;
-        object-fit: contain;
-        object-position: right bottom;
-        z-index: 2;
-    }
-
     .section-title__inner._section-home__title h2 {
         font-size: 24px;
     }
@@ -3156,53 +3285,6 @@ footer.footer * .menu {
         z-index: 1;
         line-height: 1;
         width: 59vw;
-    }
-
-    /* ._grid-template .products-categories__list__item:nth-child(1) {
-        grid-area: unset;
-    }
-
-    ._grid-template .products-categories__list__item:nth-child(2) {
-        grid-area: unset;
-    }
-
-    ._grid-template .products-categories__list__item:nth-child(3) {
-        grid-area: unset;
-    }
-
-    ._grid-template .products-categories__list__item:nth-child(4) {
-        grid-area: unset;
-    }
-
-    ._grid-template .products-categories__list__item:nth-child(5) {
-        grid-area: unset;
-    }
-
-    ._grid-template .products-categories__list__item:nth-child(6) {
-        grid-area: unset;
-    }
-
-    ._grid-template .products-categories__list__item:nth-child(7) {
-        grid-area: unset;
-    }
-
-    ._grid-template .products-categories__list__item:nth-child(8) {
-        grid-area: unset;
-    }
-
-    ._grid-template .products-categories__list__item:nth-child(9) {
-        grid-area: unset;
-    } */
-
-    .products-categories__list__item,
-    .products-categories__list._grid-template {
-        position: relative;
-        overflow: hidden;
-        min-height: 180px;
-    }
-
-    .products-categories__list {
-        grid-template-columns: 1fr;
     }
 
     .about-us__list {
