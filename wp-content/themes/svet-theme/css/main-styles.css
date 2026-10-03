@@ -3141,6 +3141,23 @@ footer.footer * .menu {
         width: 100%;
     }
 
+    section.home::before {
+        content: 'Цен\Aнос\Aти';
+        font-size: 23vw;
+        display: block;
+        color: var(--theme-color-light);
+        text-transform: uppercase;
+        font-family: var(--font-heading);
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 20px;
+        mix-blend-mode: overlay;
+        z-index: 1;
+        line-height: 1;
+        width: 70vw;
+    }
+
     /* ._grid-template .products-categories__list__item:nth-child(1) {
         grid-area: unset;
     }
