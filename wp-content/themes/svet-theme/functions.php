@@ -30,6 +30,7 @@ function svet_theme_enqueue_styles()
     wp_enqueue_script('animations-script', get_stylesheet_directory_uri() . '/js/animations.js', array(), _S_VERSION, true);
     wp_enqueue_script('main-scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array(), _S_VERSION, true);
     wp_enqueue_script('faq-scripts', get_stylesheet_directory_uri() . '/js/faq.js', array(), _S_VERSION, true);
+    wp_enqueue_script('popups-scripts', get_stylesheet_directory_uri() . '/js/popups.js', array(), _S_VERSION, true);
     wp_enqueue_script('sliders-script', get_stylesheet_directory_uri() . '/js/sliders.js', array(), _S_VERSION, true);
     wp_enqueue_script('videos-script', get_stylesheet_directory_uri() . '/js/videos-scripts.js', array(), _S_VERSION, true);
     wp_enqueue_script('broadcasts-script', get_stylesheet_directory_uri() . '/js/broadcast-scripts.js', array(), _S_VERSION, true);

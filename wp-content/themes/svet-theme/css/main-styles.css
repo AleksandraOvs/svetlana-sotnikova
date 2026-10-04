@@ -1176,15 +1176,15 @@ section.home::after {
 
 .section-home__inner:before {
     content: 'Цен\Aнос\Aти';
-    font-size: 5vw;
+    font-size: 8vw;
     display: block;
     color: var(--theme-color-light);
     text-transform: uppercase;
     font-family: var(--font-heading);
     z-index: 2;
     position: absolute;
-    top: -15px;
-    left: 40px;
+    top: 11%;
+    left: 47%;
     mix-blend-mode: overlay;
     z-index: 1;
     width: 15vw;
