@@ -11,6 +11,7 @@
 <?php get_template_part('sections/tarifs-section') ?>
 <?php get_template_part('sections/metodology') ?>
 <?php get_template_part('sections/reviews-section') ?>
+<?php get_template_part('sections/scrolling-text') ?>
 <?php get_template_part('sections/faq-section') ?>
 
 

@@ -1,0 +1,35 @@
+.scrolling-text {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.scrolling-text__track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
+.scrolling-text__item {
+    flex: 0 0 auto;
+    padding-right: 1em;
+}
+
+.scrolling-text__item {
+    font-size: 40px;
+    height: max-content;
+    line-height: 2;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.scrolling-text__track {
+    padding: 2em 0 0 0;
+}
+
+@media (max-width: 480px) {
+    .scrolling-text__item {
+        font-size: 20px;
+    }
+}

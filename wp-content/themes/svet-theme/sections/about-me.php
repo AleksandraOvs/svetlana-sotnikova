@@ -5,7 +5,7 @@ $list = carbon_get_post_meta(get_the_ID(), 'about_me_list');
 
 ?>
 
-<section class="about-me">
+<section class="about-me" id="about-me">
 
     <div class="fixed-container">
 

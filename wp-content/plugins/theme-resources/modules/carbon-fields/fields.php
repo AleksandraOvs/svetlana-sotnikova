@@ -537,6 +537,8 @@ add_action('carbon_fields_register_fields', function () {
             Field::make('text', 'crb_phone_link', 'Ссылка номера телефона')
                 ->set_width(50),
 
+            Field::make('image', 'crb_email_icon', 'Email иконка')
+                ->set_width(50),
             Field::make('text', 'crb_email', 'Email')
                 ->set_width(50),
             Field::make('text', 'crb_email_link', 'Ссылка Email')
@@ -613,5 +615,15 @@ add_action('carbon_fields_register_fields', function () {
                     Field::make('text', 'reviews_list_item_sign', 'Подпись')
                         ->set_width(30),
                 ])
+        ])
+
+        ->add_tab('Бегущая строка', [
+            Field::make('rich_text', 'scrolling_text', 'Текст бегущей строки')
+                ->set_width(33),
+        ])
+
+        ->add_tab('Футер', [
+            Field::make('rich_text', 'footer_text', 'Текст в левой колонке футера')
+                ->set_width(33),
         ]);
 });

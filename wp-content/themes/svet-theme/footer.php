@@ -16,9 +16,17 @@ $site_description = get_bloginfo('description');
                         <img
                             src="<?= esc_url($footer_logo_url); ?>"
                             alt="<?= esc_attr($site_name); ?>">
+
+                        <?php if ($site_description): ?>
+                            <p class="site-description">
+                                <?= esc_html($site_description); ?>
+                            </p>
+                        <?php endif; ?>
+
+
                     <?php } else {
                     ?>
-                        <div class="_footer-site-info__logo__company">
+                        <div class="site-info">
 
                             <?php if ($site_name): ?>
                                 <p class="site-name">
@@ -38,37 +46,24 @@ $site_description = get_bloginfo('description');
 
                     } ?>
 
+                    <?php $footer_text = carbon_get_theme_option('footer_text');
 
+                    if ($footer_text) {
+                        echo '<div class="footer-text">' . $footer_text . '</div>';
+                    }
 
+                    ?>
                 </div>
-                <?php if (is_active_sidebar('footer-sidebar-1')) : ?>
-                    <div class="footer-inner__col">
-                        <?php dynamic_sidebar('footer-sidebar-1'); ?>
-                    </div>
-                <?php endif; ?>
-                <?php
-                // wp_nav_menu([
-                //     'theme_location' => 'docs_menu',
-                //     'container'      => false,
-                //     'menu_class'     => 'docs-menu',
-                //     'menu_id'        => '',
-                //     'fallback_cb'    => false,
-                //     'link_before'    => '',
-                //     'link_after'     => '',
-                // ]);
-                ?>
             </div>
-            <?php if (is_active_sidebar('footer-sidebar-2')) : ?>
+            <?php if (is_active_sidebar('footer-sidebar-1')) : ?>
                 <div class="footer-inner__col">
-                    <?php dynamic_sidebar('footer-sidebar-2'); ?>
+                    <?php dynamic_sidebar('footer-sidebar-1'); ?>
                 </div>
             <?php endif; ?>
 
-            <?php if (is_active_sidebar('footer-sidebar-3')) : ?>
-                <div class="footer-inner__col">
-                    <?php dynamic_sidebar('footer-sidebar-3'); ?>
-                </div>
-            <?php endif; ?>
+            <div class="footer-inner__col">
+                <?php get_template_part('template-parts/contacts'); ?>
+            </div>
         </div>
 
     </div>

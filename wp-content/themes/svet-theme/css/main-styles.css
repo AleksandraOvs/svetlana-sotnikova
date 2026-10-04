@@ -496,8 +496,11 @@ p.site-name {
 }
 
 .site-description {
-    font-size: 21.2px;
-    color: var(--theme-color-grey);
+    font-family: var(--font-body);
+    font-size: 13px;
+    letter-spacing: 5%;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .7);
 }
 
 #menu-main {
@@ -622,7 +625,7 @@ ul.main-menu li a:hover::before {
 
 .mobile-menu {
     z-index: 499;
-    background: rgba(30, 0, 69, .94);
+    background: var(--theme-color-primary);
     position: fixed;
     width: 40%;
     right: 0;
@@ -636,6 +639,24 @@ ul.main-menu li a:hover::before {
     overflow: hidden;
     transform: translatex(100%);
     transition: all .5s var(--transition);
+}
+
+.mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.mobile-menu ul li a {
+    color: var(--theme-color-light);
+    font-size: 18px;
+    transition: all .5s var(--transition);
+}
+
+.mobile-menu ul li a:hover {
+    color: #fff;
+    transform: translatex(7px);
 }
 
 /*AJAX SEARCH STYLES*/
@@ -1082,11 +1103,6 @@ h1.hero__title span {
     justify-content: center;
 }
 
-.section-title {
-    margin-bottom: 5vh;
-}
-
-
 .section-title__inner {
     display: flex;
     gap: 1em;
@@ -1175,18 +1191,18 @@ section.home::after {
 }
 
 .section-home__inner:before {
-    content: 'Цен\Aнос\Aти';
+    content: 'Ценности';
     font-size: 8vw;
     display: block;
-    color: var(--theme-color-light);
+    color: rgba(20, 20, 20, .7);
     text-transform: uppercase;
     font-family: var(--font-heading);
     z-index: 2;
     position: absolute;
-    top: 11%;
-    left: 47%;
+    top: -10%;
+    left: 0;
     mix-blend-mode: overlay;
-    z-index: 1;
+    z-index: 2;
     width: 15vw;
     height: 100%;
     line-height: 1;
@@ -1549,6 +1565,7 @@ section.home:after {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
 
 .metods__image {
@@ -2274,13 +2291,14 @@ footer .widget p {
 .footer-inner__col__logo {
     display: flex;
     gap: .5em;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 1.5em;
+    flex-direction: column;
 }
 
 .footer-inner__col__logo img {
-    width: 150px;
-    height: 40px;
+    width: 100%;
+    height: 30px;
     object-fit: contain;
     object-position: center;
 }
@@ -2289,11 +2307,20 @@ footer .widget p {
     flex: 1;
 }
 
-.footer-inner>div:first-child,
+/* .footer-inner>div:first-child,
 .footer-inner>div:nth-child(3) {
     width: 30%;
     flex: unset;
     max-width: 280px;
+} */
+
+.footer-text {
+    color: #fff;
+    font-family: var(--font-heading);
+    font-style: italic;
+    letter-spacing: 2%;
+    font-size: 24px;
+    line-height: 1.4;
 }
 
 .contacts-bar {
@@ -2320,14 +2347,43 @@ footer.footer * .menu {
     display: flex;
     justify-content: space-between;
     gap: 4em;
+
 }
+
+.contacts button.button {
+    width: 100%;
+}
+
+.contacts__email,
+a.contacts__messenger {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: .5em 2em;
+    border: 1px solid var(--theme-color-grey);
+    border-radius: 30px;
+}
+
+.contacts__email {
+    margin-top: 1em;
+}
+
+.contacts__messengers {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.contacts__address,
+.contacts__hours {
+    color: rgba(255, 255, 255, .7);
+}
+
+
 
 .footer-inner>div:nth-child(2) {
     max-width: 385px;
-}
-
-.footer-inner__col div p {
-    margin-bottom: 2em;
 }
 
 .widget .footer-company-name {
@@ -2338,10 +2394,6 @@ footer.footer * .menu {
 
 .wp-block-columns .wp-block-paragraph a {
     text-decoration: none;
-}
-
-.footer-inner>div:last-child {
-    text-align: right;
 }
 
 .footer__info {
@@ -2396,14 +2448,6 @@ footer.footer * .menu {
 
     p.site-name {
         font-size: 20px;
-    }
-
-    .site-description {
-        font-size: 15px;
-    }
-
-    .header-logo__site-info {
-        gap: 0;
     }
 
     #menu-main {
@@ -2466,8 +2510,8 @@ footer.footer * .menu {
         gap: 5px;
         justify-content: center;
         background-size: 0px;
-        width: 34px;
-        height: 34px;
+        width: 30px;
+        height: 30px;
         transition: all .5s var(--transition);
     }
 
@@ -2942,12 +2986,10 @@ footer.footer * .menu {
     }
 
     .footer-inner {
-        flex-direction: column;
+        flex-wrap: wrap;
     }
 
-    .footer-inner>div:first-child,
-    .footer-inner>div:nth-child(3),
-    .footer-inner>div:nth-child(2) {
+    .footer-inner>div:first-child {
         width: 100%;
     }
 
@@ -2955,6 +2997,30 @@ footer.footer * .menu {
         text-align: left;
     }
 
+    .footer-inner .footer-inner__col:nth-child(2),
+    .footer-inner .footer-inner__col:nth-child(3) {
+        width: calc(50% - 1em);
+    }
+
+    .footer-inner>div {
+        flex: unset;
+    }
+
+
+    .footer-menu__title,
+    .widget-title,
+    footer.footer * .menu li a {
+        text-align: left;
+    }
+
+    .contacts__email,
+    a.contacts__messenger {
+        max-width: 280px;
+    }
+
+    .footer-inner__col__logo {
+        align-items: center;
+    }
 
 
 }
@@ -2963,7 +3029,6 @@ footer.footer * .menu {
 
     .mobile-menu {
         z-index: 499;
-        background: rgba(30, 0, 69, .94);
         position: fixed;
         width: 100%;
         right: unset;
@@ -3372,5 +3437,14 @@ footer.footer * .menu {
 
     .footer-inner__col div p {
         margin-bottom: .5em;
+    }
+
+    .footer-inner .footer-inner__col:nth-child(2),
+    .footer-inner .footer-inner__col:nth-child(3) {
+        width: 100%;
+    }
+
+    .footer-text {
+        font-size: 18px;
     }
 }

@@ -92,33 +92,12 @@
                 <div class="header__contacts">
 
                     <?php
-                    $phone = carbon_get_theme_option('crb_phone');
-                    $phone_link = carbon_get_theme_option('crb_phone_link');
-
-                    $email = carbon_get_theme_option('crb_email');
-                    $email_link = carbon_get_theme_option('crb_email_link');
 
                     $callback_button_text = carbon_get_theme_option('crb_callback_button_text');
                     $callback_form_id = carbon_get_theme_option('crb_callback_button_shortcode');
                     ?>
 
-                    <div class="header__contacts__links">
-                        <?php if ($phone): ?>
-                            <a
-                                href="<?php echo esc_url($phone_link ?: 'tel:' . preg_replace('/[^0-9+]/', '', $phone)); ?>"
-                                class="header__phone">
-                                <?php echo esc_html($phone); ?>
-                            </a>
-                        <?php endif; ?>
 
-                        <?php if ($email): ?>
-                            <a
-                                href="<?php echo esc_url($email_link ?: 'mailto:' . $email); ?>"
-                                class="header__email">
-                                <?php echo esc_html($email); ?>
-                            </a>
-                        <?php endif; ?>
-                    </div>
 
 
 

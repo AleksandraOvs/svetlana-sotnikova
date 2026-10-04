@@ -12,7 +12,7 @@ $videos_query = new WP_Query([
 
 <?php if ($videos_query->have_posts()) : ?>
 
-    <section class="videos-section">
+    <section class="videos-section" id="videos">
         <div class="fixed-container">
 
 
