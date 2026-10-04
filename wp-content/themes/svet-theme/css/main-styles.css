@@ -2360,7 +2360,7 @@ a.contacts__messenger {
     gap: 1em;
     align-items: center;
     justify-content: center;
-    max-width: 100%;
+    max-width: 280px;
     padding: .5em 2em;
     border: 1px solid var(--theme-color-grey);
     border-radius: 30px;
