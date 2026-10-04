@@ -2364,6 +2364,19 @@ a.contacts__messenger {
     padding: .5em 2em;
     border: 1px solid var(--theme-color-grey);
     border-radius: 30px;
+    transition: all .5s var(--transition);
+}
+
+.contacts__email:hover,
+a.contacts__messenger:hover {
+    background: var(--theme-color-light);
+    color: var(--theme-color-primary);
+    border-color: var(--theme-color-light);
+}
+
+.contacts__email:hover img,
+a.contacts__messenger:hover img {
+    mix-blend-mode: exclusion;
 }
 
 .contacts__email {
