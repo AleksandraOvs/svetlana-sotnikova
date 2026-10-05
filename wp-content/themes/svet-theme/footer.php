@@ -62,6 +62,7 @@ $site_description = get_bloginfo('description');
             <?php endif; ?>
 
             <div class="footer-inner__col">
+                <h3 class="widget-title">Связаться</h3>
                 <?php get_template_part('template-parts/contacts'); ?>
             </div>
         </div>

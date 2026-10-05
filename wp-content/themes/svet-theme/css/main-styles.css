@@ -659,52 +659,35 @@ ul.main-menu li a:hover::before {
     transform: translatex(7px);
 }
 
-/*AJAX SEARCH STYLES*/
-/* .search-results {
+.mobile-menu__contacts .contacts .header__callback-button {
     display: none;
-    margin-top: 20px;
-    padding: 10px;
 }
 
-.search-results.show {
-    display: block;
+.mobile-menu__contacts .contacts {
+    color: var(--theme-color-light);
 }
 
-.search-results__item {
-    display: block;
-    padding: 12px 0;
-    text-decoration: none;
-    color: #1d1d1f;
-    border-bottom: 1px solid #eee;
+.mobile-menu__contacts .contacts .contacts__email,
+.mobile-menu__contacts .contacts .contacts__messengers a,
+.mobile-menu__contacts .contacts .contacts__phone {
+    padding: 0;
+    border: none;
+    justify-content: flex-start;
+    font-size: 18px;
 }
 
-.search-results__item:last-child {
-    border-bottom: 0;
+.mobile-menu__contacts .contacts .contacts__phone:hover,
+.mobile-menu__contacts .contacts .contacts__email:hover,
+.mobile-menu__contacts .contacts .contacts__messengers a:hover {
+    background: transparent;
+    color: var(--theme-color-accent);
 }
 
-.search-results__title {
-    display: block;
-    font-size: 16px;
-    font-weight: 600;
+.mobile-menu__contacts .contacts .contacts__email img,
+.mobile-menu__contacts .contacts .contacts__messengers a img {
+    width: 24px;
+    height: 24px;
 }
-
-.search-results__type {
-    display: block;
-    margin-top: 4px;
-    font-size: 13px;
-    color: #6c757d;
-}
-
-.search-results__empty {
-    padding: 20px 0;
-    text-align: center;
-    color: #6c757d;
-}
-
-.search-results__loading {
-    padding: 20px 0;
-    text-align: center;
-} */
 
 /* =========================================
    Swiper
@@ -2362,7 +2345,8 @@ footer.footer * .menu {
 }
 
 .contacts__email,
-a.contacts__messenger {
+a.contacts__messenger,
+.contacts__phone {
     display: flex;
     gap: 1em;
     align-items: center;
@@ -2372,6 +2356,17 @@ a.contacts__messenger {
     border: 1px solid var(--theme-color-grey);
     border-radius: 30px;
     transition: all .5s var(--transition);
+}
+
+.contacts__phone {
+    margin-top: 1em;
+}
+
+.contacts__phone svg {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    object-position: center;
 }
 
 .contacts__email:hover,
