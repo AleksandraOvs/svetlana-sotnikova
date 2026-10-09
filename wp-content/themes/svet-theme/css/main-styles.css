@@ -2360,6 +2360,7 @@ a.contacts__messenger,
 .contacts__phone {
     display: flex;
     gap: 1em;
+    font-size: 14px;
     align-items: center;
     justify-content: center;
     max-width: 280px;
