@@ -2394,6 +2394,10 @@ a.contacts__messenger:hover {
     border-color: var(--theme-color-light);
 }
 
+a.contacts__messenger:hover span {
+    color: var(--theme-color-primary);
+}
+
 .contacts__email:hover img,
 a.contacts__messenger:hover img {
     mix-blend-mode: exclusion;
