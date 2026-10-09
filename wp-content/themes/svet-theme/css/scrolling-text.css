@@ -13,7 +13,7 @@
 
 .scrolling-text__item {
     flex: 0 0 auto;
-    padding-right: 1em;
+    padding-right: .3em;
 }
 
 .scrolling-text__item {
