@@ -2278,7 +2278,6 @@ footer .widget p {
     font-family: var(--font-body);
     font-size: 14px;
     text-transform: uppercase;
-    text-align: center;
     letter-spacing: 10%;
     font-weight: 400;
 }
@@ -2694,6 +2693,11 @@ a.contacts__messenger:hover img {
         color: var(--white);
         text-align: center;
         display: block;
+    }
+
+    .widget-title,
+    .footer-inner__col * h3 {
+        text-align: center;
     }
 
     .docs-menu li a {
