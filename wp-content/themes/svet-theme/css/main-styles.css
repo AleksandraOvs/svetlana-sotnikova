@@ -2272,11 +2272,14 @@ footer .widget p {
 
 .widget-title,
 .footer-inner__col * h3 {
-    font-size: 24px;
-    font-weight: 400;
     color: var(--theme-color-grey);
-    margin-bottom: .5em;
+    margin-bottom: 1em;
     margin-top: 0;
+    font-family: var(--font-body);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 10%;
+    font-weight: 400;
 }
 
 ._footer__inner__col__logo {
