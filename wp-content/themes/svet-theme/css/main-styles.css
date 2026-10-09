@@ -2278,6 +2278,7 @@ footer .widget p {
     font-family: var(--font-body);
     font-size: 14px;
     text-transform: uppercase;
+    text-align: center;
     letter-spacing: 10%;
     font-weight: 400;
 }
