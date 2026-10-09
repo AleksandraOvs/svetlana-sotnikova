@@ -2,6 +2,7 @@
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
+    font-family: var(--font-accent);
 }
 
 .scrolling-text__track {
@@ -18,9 +19,8 @@
 .scrolling-text__item {
     font-size: 40px;
     height: max-content;
-    line-height: 2;
-    font-family: var(--font-heading);
     text-transform: uppercase;
+    line-height: 2;
     font-weight: 600;
 }
 

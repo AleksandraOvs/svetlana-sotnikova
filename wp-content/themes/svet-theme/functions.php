@@ -49,6 +49,26 @@ add_action('enqueue_block_editor_assets', function () {
     );
 });
 
+add_action('wp_enqueue_scripts', 'purpleweb_enqueue_google_fonts');
+
+function purpleweb_enqueue_google_fonts()
+{
+    wp_enqueue_style(
+        'marck-script',
+        'https://fonts.googleapis.com/css2?family=Marck+Script&display=swap',
+        array(),
+        null
+    );
+}
+
+add_action('wp_head', 'purpleweb_google_fonts_preconnect', 1);
+
+function purpleweb_google_fonts_preconnect()
+{
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+}
+
 //add_filter('wp_font_library_enabled', '__return_false');
 
 if (!function_exists('svet_theme_theme_setup')) {

@@ -6,10 +6,6 @@
     $buttons = carbon_get_post_meta(get_the_ID(), 'hero_button');
     $background = carbon_get_post_meta(get_the_ID(), 'hero_background');
     ?>
-
-    <div class="hero-decor"></div>
-
-
     <div class="hero__inner">
         <div class="hero__inner__content">
             <?php if ($title || $title_accent || $description) : ?>
