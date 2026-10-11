@@ -168,6 +168,7 @@
 
     .programms-list {
         flex-direction: column;
+        margin-top: 2em;
     }
 
     .programms-list article:first-child {

@@ -3420,7 +3420,7 @@ a.contacts__messenger:hover img {
         width: 100%;
     }
 
-    section.home::before {
+    /* section.home::before {
         content: 'Цен\Aнос\Aти';
         font-size: 22vw;
         display: block;
@@ -3436,7 +3436,7 @@ a.contacts__messenger:hover img {
         z-index: 1;
         line-height: 1;
         width: 59vw;
-    }
+    } */
 
     .about-us__list {
         gap: 1em;
