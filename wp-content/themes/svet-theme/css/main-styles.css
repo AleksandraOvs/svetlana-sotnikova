@@ -3017,7 +3017,7 @@ a.contacts__messenger:hover img {
     }
 
     section.home::after {
-        height: 25vh;
+        height: 100%;
     }
 
     .section-home__inner::before {
