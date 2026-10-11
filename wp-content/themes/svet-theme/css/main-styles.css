@@ -3427,6 +3427,7 @@ a.contacts__messenger:hover img {
         color: var(--theme-color-light);
         text-transform: uppercase;
         font-family: var(--font-heading);
+        background: transparent;
         z-index: 2;
         position: absolute;
         top: 0;
