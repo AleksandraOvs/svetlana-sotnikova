@@ -104,45 +104,45 @@ function register_videos_cpt()
 
 add_action('init', 'register_videos_cpt');
 
-function register_broadcasts_cpt()
-{
-    register_post_type('broadcasts', [
-        'labels' => [
-            'name'               => 'Эфиры',
-            'singular_name'      => 'Эфир',
-            'menu_name'          => 'Эфиры',
-            'add_new'            => 'Добавить эфир',
-            'add_new_item'       => 'Добавить эфир',
-            'edit_item'          => 'Редактировать эфир',
-            'new_item'           => 'Новый эфир',
-            'view_item'          => 'Просмотреть эфир',
-            'search_items'       => 'Поиск эфиров',
-            'not_found'          => 'Эфиры не найдены',
-            'not_found_in_trash' => 'Эфиры в корзине не найдены',
-        ],
+// function register_broadcasts_cpt()
+// {
+//     register_post_type('broadcasts', [
+//         'labels' => [
+//             'name'               => 'Эфиры',
+//             'singular_name'      => 'Эфир',
+//             'menu_name'          => 'Эфиры',
+//             'add_new'            => 'Добавить эфир',
+//             'add_new_item'       => 'Добавить эфир',
+//             'edit_item'          => 'Редактировать эфир',
+//             'new_item'           => 'Новый эфир',
+//             'view_item'          => 'Просмотреть эфир',
+//             'search_items'       => 'Поиск эфиров',
+//             'not_found'          => 'Эфиры не найдены',
+//             'not_found_in_trash' => 'Эфиры в корзине не найдены',
+//         ],
 
-        'public'             => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'show_in_rest'       => true,
-        'publicly_queryable' => true,
+//         'public'             => true,
+//         'show_ui'            => true,
+//         'show_in_menu'       => true,
+//         'show_in_rest'       => true,
+//         'publicly_queryable' => true,
 
-        'has_archive' => false,
+//         'has_archive' => false,
 
-        'rewrite' => [
-            'slug'       => 'broadcasts',
-            'with_front' => false,
-        ],
+//         'rewrite' => [
+//             'slug'       => 'broadcasts',
+//             'with_front' => false,
+//         ],
 
-        'menu_icon' => 'dashicons-video-alt2',
+//         'menu_icon' => 'dashicons-video-alt2',
 
-        'supports' => [
-            'title',
-        ],
-    ]);
-}
+//         'supports' => [
+//             'title',
+//         ],
+//     ]);
+// }
 
-add_action('init', 'register_broadcasts_cpt');
+// add_action('init', 'register_broadcasts_cpt');
 
 /**
  * TARIFS
