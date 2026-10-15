@@ -3,19 +3,23 @@
 }
 
 .video-popup {
-    width: min(1000px, calc(100vw - 40px));
-    max-height: calc(100vh - 40px);
+    /* width: min(1000px, calc(100vw - 40px));
+    max-height: calc(100vh - 40px); */
     overflow-y: auto;
     background: #fff;
     padding: 0;
     border-radius: 15px;
 }
 
+
+
 .video-popup__video {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9/16;
     background: #000;
+    height: auto;
+    height: 75vh;
 }
 
 .videos-page__content {
@@ -51,6 +55,9 @@
     aspect-ratio: 4/3;
     position: relative;
     padding: .5em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .videos-section__item-image {
@@ -112,6 +119,21 @@
     display: block;
     width: 100%;
     display: flex;
+}
+
+/* Контейнер видео в попапе */
+.videos-section__popup-content {
+    width: auto;
+    max-width: 100%;
+}
+
+/* Само видео */
+.videos-section__popup-content video,
+.videos-section__popup-content iframe {
+    display: block;
+    max-width: 100%;
+    max-height: 85vh;
+    margin: 0 auto;
 }
 
 @media (max-width: 576px) {
