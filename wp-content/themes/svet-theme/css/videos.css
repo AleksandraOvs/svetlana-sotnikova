@@ -106,7 +106,7 @@
 .videos-section__item-title {
     z-index: 3;
     position: relative;
-    font-size: 24px;
+    font-size: 18px;
     font-family: var(--font-body);
     font-weight: 600;
     width: 70%;
@@ -117,6 +117,7 @@
 .videos-section__item-title::first-line {
     font-style: italic;
     font-weight: 600;
+    font-size: 22px;
     color: var(--theme-color-accent);
     font-family: var(--font-heading);
 }
@@ -149,9 +150,4 @@
         grid-template-columns: 1fr;
     }
 
-    .videos-section__item-title {
-        z-index: 3;
-        position: relative;
-        font-size: 18px;
-    }
 }
