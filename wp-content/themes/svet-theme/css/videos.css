@@ -144,10 +144,20 @@
     margin: 0 auto;
 }
 
-@media (max-width: 576px) {
+@media(max-width: 800px) {
     .videos-section__list {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-wrap: wrap;
     }
 
+    .videos-section__item {
+        width: calc(50% - .5em);
+    }
+}
+
+@media (max-width: 576px) {
+
+    .videos-section__item {
+        width: 100%;
+    }
 }
