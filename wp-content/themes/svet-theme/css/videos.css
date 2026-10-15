@@ -56,8 +56,8 @@
     position: relative;
     padding: .5em;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .videos-section__item-image {
@@ -109,9 +109,17 @@
     position: relative;
     font-size: 16px;
     font-family: var(--font-body);
-    font-weight: 400;
-    width: calc(100% - 60px);
+    font-weight: 600;
+    width: 70%;
     text-transform: none;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, .7));
+}
+
+.videos-section__item-title::first-line {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--theme-color-accent);
+    font-family: var(--font-heading);
 }
 
 .videos-section__button a.button {
