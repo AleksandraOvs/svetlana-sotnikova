@@ -148,4 +148,10 @@
         display: grid;
         grid-template-columns: 1fr;
     }
+
+    .videos-section__item-title {
+        z-index: 3;
+        position: relative;
+        font-size: 18px;
+    }
 }
