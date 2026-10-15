@@ -99,8 +99,8 @@
 }
 
 .videos-section__item:hover .videos-section__item-image img {
-    opacity: .5;
     transform: scale(1.05);
+    filter: brightness(1.105);
 }
 
 .videos-section__item-title {
