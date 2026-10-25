@@ -1568,8 +1568,7 @@ section.home:after {
 }
 
 .metodology__inner {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    display: flex;
     gap: 2em;
     align-items: stretch;
 }
@@ -1609,6 +1608,12 @@ section.home:after {
     flex-direction: column;
     justify-content: space-between;
     min-height: 100%;
+    width: 40%;
+}
+
+.metodology__inner__right {
+    max-height: max-content;
+    width: calc(60% - 2em);
 }
 
 .metods__image {
