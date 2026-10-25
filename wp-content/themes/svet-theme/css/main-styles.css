@@ -432,6 +432,34 @@ section.page-title-block {
     margin-bottom: 1em;
 }
 
+.section-title {
+    margin-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid var(--theme-color-grey);
+}
+
+/* =========================================
+   Archive
+========================================= */
+
+.archive__list {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.archive__list article.tarif-item:nth-child(2),
+.archive__list article.tarif-item:first-child {
+    width: calc(100% / 2 - 1em);
+}
+
+.archive__list article.tarif-item {
+    width: calc(100% / 2 - 1em);
+}
+
+
+
 /* =========================================
    Header
 ========================================= */

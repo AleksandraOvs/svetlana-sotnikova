@@ -41,7 +41,7 @@ $tarifs_query = new WP_Query([
                     <?php while ($tarifs_query->have_posts()) : $tarifs_query->the_post(); ?>
 
                         <?php
-                        get_template_part('template-parts/tarif-item');
+                        get_template_part('template-parts/tarifs-item');
                         ?>
 
                     <?php endwhile; ?>

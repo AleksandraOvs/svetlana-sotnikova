@@ -4,11 +4,13 @@
     flex-wrap: wrap;
 }
 
-.programms-list article:first-child {
+.programms-list article:first-child,
+.archive__list article:first-child {
     width: 30%;
 }
 
-.programms-list article:nth-child(2) {
+.programms-list article:nth-child(2),
+.archive__list article:nth-child(2) {
     width: calc(70% - 2em);
 }
 
@@ -24,6 +26,8 @@
     justify-content: space-between;
     gap: 1em;
     align-items: stretch;
+    border-radius: 30px;
+    overflow: hidden;
 }
 
 .programm-item__description {
@@ -171,11 +175,13 @@
         margin-top: 2em;
     }
 
-    .programms-list article:first-child {
+    .programms-list article:first-child,
+    .archive__list article:first-child {
         width: 100%;
     }
 
-    .programms-list article:nth-child(2) {
+    .programms-list article:nth-child(2),
+    .archive__list article:nth-child(2) {
         width: 100%;
     }
 

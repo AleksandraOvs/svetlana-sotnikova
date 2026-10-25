@@ -34,6 +34,7 @@ function register_programms_cpt()
             'editor',
             'thumbnail',
             'excerpt',
+            'page-attributes',
         ],
 
         'has_archive'         => true,

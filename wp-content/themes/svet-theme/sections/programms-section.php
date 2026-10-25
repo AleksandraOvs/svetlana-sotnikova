@@ -38,7 +38,7 @@
             while ($programms->have_posts()) :
                 $programms->the_post();
 
-                get_template_part('template-parts/programm-item');
+                get_template_part('template-parts/programms-item');
 
             endwhile;
 

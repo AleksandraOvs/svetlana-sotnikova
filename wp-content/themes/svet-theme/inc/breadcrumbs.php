@@ -263,58 +263,6 @@ function site_breadcrumbs()
         /*
      * Категория WooCommerce
      */
-    } elseif (is_product_category()) {
-
-        $term = get_queried_object();
-
-        if ($term) {
-
-            echo '<a href="' . esc_url(
-                get_post_type_archive_link('product')
-            ) . '">Каталог</a>';
-
-            echo '<span class="separator"></span>';
-
-
-            $ancestors = get_ancestors(
-                $term->term_id,
-                'product_cat'
-            );
-
-            if ($ancestors) {
-
-                $ancestors = array_reverse($ancestors);
-
-                foreach ($ancestors as $ancestor_id) {
-
-                    $ancestor = get_term(
-                        $ancestor_id,
-                        'product_cat'
-                    );
-
-                    if (!$ancestor || is_wp_error($ancestor)) {
-                        continue;
-                    }
-
-                    echo '<a href="' . esc_url(
-                        get_term_link($ancestor)
-                    ) . '">'
-                        . esc_html($ancestor->name)
-                        . '</a>';
-
-                    echo '<span class="separator"></span>';
-                }
-            }
-
-            echo '<span>'
-                . esc_html($term->name)
-                . '</span>';
-        }
-
-
-        /*
-     * Остальные архивы CPT
-     */
     } elseif (is_post_type_archive()) {
 
         $post_type = get_query_var('post_type');

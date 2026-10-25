@@ -45,7 +45,7 @@ $videos_query = new WP_Query([
                     <?php while ($videos_query->have_posts()) : $videos_query->the_post(); ?>
 
                         <?php
-                        get_template_part('template-parts/video-item');
+                        get_template_part('template-parts/videos-item');
                         ?>
 
                     <?php endwhile; ?>
