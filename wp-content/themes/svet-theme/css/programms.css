@@ -200,6 +200,10 @@
         aspect-ratio: 3/4;
     }
 
+    .programm-item__content {
+        width: 100%;
+    }
+
     .programm-item__structure-item.grid-element {
         width: calc(100% / 2 - .6em);
     }
