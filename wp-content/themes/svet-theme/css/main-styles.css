@@ -3121,10 +3121,6 @@ a.contacts__messenger:hover img {
         width: 100%;
     }
 
-    .archive__list a.videos-section__item {
-        width: calc(100% / 2 - 1em);
-    }
-
     .archive__list a.videos-section__item:nth-child(3n) {
         width: 100%;
     }
