@@ -3121,6 +3121,10 @@ a.contacts__messenger:hover img {
         width: 100%;
     }
 
+    .archive__list a.videos-section__item {
+        width: 100%;
+    }
+
     .footer-inner {
         flex-wrap: wrap;
     }
