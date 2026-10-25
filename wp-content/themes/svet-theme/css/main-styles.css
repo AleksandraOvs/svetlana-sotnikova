@@ -3098,6 +3098,15 @@ a.contacts__messenger:hover img {
         padding-bottom: 0;
     }
 
+    .archive__list article.tarif-item:nth-child(2),
+    .archive__list article.tarif-item:first-child {
+        width: 100%;
+    }
+
+    .archive__list article.tarif-item {
+        width: 100%;
+    }
+
 
     .footer-inner {
         flex-wrap: wrap;
