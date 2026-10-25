@@ -2771,10 +2771,10 @@ a.contacts__messenger:hover img {
         display: block;
     }
 
-    .widget-title,
+    /* .widget-title,
     .footer-inner__col * h3 {
         text-align: center;
-    }
+    } */
 
     .docs-menu li a {
         text-align: center;
