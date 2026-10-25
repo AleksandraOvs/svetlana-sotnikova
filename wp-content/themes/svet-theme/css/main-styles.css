@@ -463,6 +463,9 @@ section.page-title-block {
     width: calc(100% / 2 - 1em);
 }
 
+.archive__list a.videos-section__item {
+    width: calc(100% / 3 - 1.4em);
+}
 
 
 /* =========================================
