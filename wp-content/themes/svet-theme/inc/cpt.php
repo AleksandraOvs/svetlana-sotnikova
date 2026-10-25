@@ -89,7 +89,7 @@ function register_videos_cpt()
         ],
 
         // Архив
-        'has_archive'        => false,
+        'has_archive'        => true,
 
         // URL:
         // /videos/
