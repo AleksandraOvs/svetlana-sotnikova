@@ -2682,7 +2682,6 @@ a.contacts__messenger:hover img {
         top: 9px;
     }
 
-
     .menu-item.menu-item-has-children>a::after {
         content: none;
     }
@@ -2726,6 +2725,15 @@ a.contacts__messenger:hover img {
 
     .metodology__inner__left {
         flex-direction: row;
+    }
+
+    .metodology__inner__left {
+        width: 100%;
+        gap: 1em;
+    }
+
+    .metodology__inner__right {
+        width: 100%;
     }
 
     .metodology__inner__left .section-title {
