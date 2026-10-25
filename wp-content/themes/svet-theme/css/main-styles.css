@@ -1621,7 +1621,7 @@ section.home:after {
     overflow: hidden;
     border-radius: 15px;
     height: 220px;
-    flex: 1;
+    flex-grow: 1;
 }
 
 .metods__image img {
