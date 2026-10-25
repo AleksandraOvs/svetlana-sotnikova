@@ -10,7 +10,7 @@ $videos_query = new WP_Query([
     'posts_per_page' => -1,
     'post_status'    => 'publish',
     'orderby'        => 'date',
-    'order'          => 'DESC',
+    // 'order'          => 'DESC',
 ]);
 ?>
 
