@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * Template name: Videos
+ */
 get_header();
 
 $videos_query = new WP_Query([
