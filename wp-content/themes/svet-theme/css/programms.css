@@ -189,8 +189,15 @@
         width: 100%;
     }
 
+    .programm-item {
+        flex-direction: column-reverse;
+    }
+
     .programm-item__image {
-        display: none;
+        width: 100%;
+        height: auto;
+        position: relative;
+        aspect-ratio: 3/4;
     }
 
     .programm-item__structure-item.grid-element {
