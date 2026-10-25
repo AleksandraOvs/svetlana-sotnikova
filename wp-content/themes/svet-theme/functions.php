@@ -364,18 +364,18 @@ function get_broadcast_embed_url($url)
 }
 
 //отображать записи в архивах в том порядке, в котором они располоены в админке
-add_action('pre_get_posts', 'purple_web_archive_order');
+// add_action('pre_get_posts', 'purple_web_archive_order');
 
-function purple_web_archive_order($query)
-{
-    if (is_admin() || !$query->is_main_query()) {
-        return;
-    }
+// function purple_web_archive_order($query)
+// {
+//     if (is_admin() || !$query->is_main_query()) {
+//         return;
+//     }
 
-    if ($query->is_archive()) {
-        $query->set('orderby', [
-            'menu_order' => 'DESC',
-            'date'       => 'ASC',
-        ]);
-    }
-}
+//     if ($query->is_archive()) {
+//         $query->set('orderby', [
+//             'menu_order' => 'DESC',
+//             'date'       => 'ASC',
+//         ]);
+//     }
+// }
