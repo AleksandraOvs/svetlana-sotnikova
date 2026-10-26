@@ -688,7 +688,7 @@ ul.main-menu li a:hover::before {
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 1em;
+    top: 2em;
     right: 1em;
 }
 
