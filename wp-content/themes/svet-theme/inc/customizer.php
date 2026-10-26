@@ -690,3 +690,48 @@ add_action(
     'enqueue_block_editor_assets',
     'svet_theme_editor_custom_properties'
 );
+
+/**
+ * Динамическая палитра Gutenberg из настроек Customizer.
+ */
+function svet_theme_register_editor_colors()
+{
+
+    $settings = svet_theme_get_theme_settings();
+
+    $palette = [
+        [
+            'name'  => 'Black',
+            'slug'  => 'black',
+            'color' => $settings['black'],
+        ],
+        [
+            'name'  => 'Primary',
+            'slug'  => 'primary',
+            'color' => $settings['primary'],
+        ],
+        [
+            'name'  => 'Secondary',
+            'slug'  => 'secondary',
+            'color' => $settings['secondary'],
+        ],
+        [
+            'name'  => 'Accent',
+            'slug'  => 'accent',
+            'color' => $settings['accent'],
+        ],
+        [
+            'name'  => 'Grey',
+            'slug'  => 'grey',
+            'color' => $settings['grey'],
+        ],
+        [
+            'name'  => 'Light',
+            'slug'  => 'light',
+            'color' => $settings['light'],
+        ],
+    ];
+
+    add_theme_support('editor-color-palette', $palette);
+}
+add_action('after_setup_theme', 'svet_theme_register_editor_colors');

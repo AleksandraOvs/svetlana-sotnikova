@@ -2,36 +2,6 @@
   "version": 3,
   "settings": {
     "appearanceTools": true,
-    "color": {
-      "palette": [
-        {
-          "slug": "black",
-          "name": "Black",
-          "color": "var(--theme-color-black)"
-        },
-        {
-          "slug": "primary",
-          "name": "Primary",
-          "color": "var(--theme-color-primary)"
-        },
-        {
-          "slug": "secondary",
-          "name": "Secondary",
-          "color": "var(--theme-color-secondary)"
-        },
-        {
-          "slug": "accent",
-          "name": "Accent",
-          "color": "var(--theme-color-accent)"
-        },
-        {
-          "slug": "grey",
-          "name": "Grey",
-          "color": "var(--theme-color-grey)"
-        }
-      ],
-      "defaultPalette": true
-    },
     "typography": {
       "fontFamilies": [
         {
