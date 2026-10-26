@@ -674,7 +674,7 @@ ul.main-menu li a:hover::before {
     right: 0;
     position: fixed;
     top: 0;
-    padding: 2em;
+    padding: 3em 2em 2em 2em;
     height: 100vh;
     transition: all .5s var(--transition);
     transform: translatex(100%);
