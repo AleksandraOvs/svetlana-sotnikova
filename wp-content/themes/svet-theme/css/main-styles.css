@@ -664,6 +664,59 @@ ul.main-menu li a:hover::before {
     background-position: center;
 }
 
+/*HEADER CONTACTS*/
+
+#header-contacts {
+    display: block;
+    background: var(--theme-color-black);
+    width: 40%;
+    max-width: 350px;
+    right: 0;
+    position: fixed;
+    top: 0;
+    padding: 2em;
+    height: 100vh;
+    transition: all .5s var(--transition);
+    transform: translatex(100%);
+}
+
+#header-contacts.show {
+    transform: none;
+}
+
+.header-contacts__close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+
+.header-contacts__close svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+#header-contacts a {
+    color: var(--theme-color-light);
+    border: none;
+    padding: 0;
+    justify-content: flex-start;
+}
+
+#header-contacts a :hover {
+    background: transparent;
+    font-weight: 600;
+}
+
+#header-contacts a:not(:last-child) {
+    margin-bottom: .5em;
+}
+
+
 .mobile-menu {
     z-index: 499;
     background: var(--theme-color-primary);
@@ -2623,8 +2676,6 @@ a.contacts__messenger:hover img {
         display: none;
     }
 
-
-
     .header__contacts__links {
         display: none;
     }
@@ -2684,6 +2735,14 @@ a.contacts__messenger:hover img {
 
     .menu-item.menu-item-has-children>a::after {
         content: none;
+    }
+
+    #header-contacts {
+        display: none;
+    }
+
+    li.menu-item.contacts-button {
+        display: none;
     }
 
     .mobile-menu .main-menu {

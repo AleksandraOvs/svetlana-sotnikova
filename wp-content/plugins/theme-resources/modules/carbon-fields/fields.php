@@ -532,17 +532,21 @@ add_action('carbon_fields_register_fields', function () {
     Container::make('theme_options', 'Настройки сайта')
         ->add_tab('Контакты', [
 
+            Field::make('image', 'crb_phone_icon', 'Иконка телефона')
+                ->set_width(33),
             Field::make('text', 'crb_phone', 'Номер телефона')
-                ->set_width(50),
+                ->set_width(33),
             Field::make('text', 'crb_phone_link', 'Ссылка номера телефона')
-                ->set_width(50),
+                ->set_width(33),
+
+
 
             Field::make('image', 'crb_email_icon', 'Email иконка')
-                ->set_width(50),
+                ->set_width(33),
             Field::make('text', 'crb_email', 'Email')
-                ->set_width(50),
+                ->set_width(33),
             Field::make('text', 'crb_email_link', 'Ссылка Email')
-                ->set_width(50),
+                ->set_width(33),
 
             Field::make('text', 'crb_callback_button_text', 'Текст кнопки для формы')
                 ->set_width(50),

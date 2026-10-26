@@ -89,6 +89,7 @@
                 ]);
                 ?>
 
+
                 <div class="header__contacts">
 
                     <?php
@@ -96,10 +97,6 @@
                     $callback_button_text = carbon_get_theme_option('crb_callback_button_text');
                     $callback_form_id = carbon_get_theme_option('crb_callback_button_shortcode');
                     ?>
-
-
-
-
 
                     <?php if ($callback_button_text && $callback_form_id): ?>
 
@@ -129,21 +126,24 @@
                         <span></span>
                     </button>
                 </div>
-
-
-
-
-
                 <!-- end of header logo -->
             </div>
 
+            <div id="header-contacts">
+                <div class="header-contacts__close">
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.8125 6.10156L12.2031 11.5L11.5 12.2031L6.10156 6.8125L0.703125 12.2031L0 11.5L5.39062 6.10156L0 0.703125L0.703125 0L6.10156 5.39062L11.5 0L12.2031 0.703125L6.8125 6.10156Z" fill="#A0000B" />
+                    </svg>
 
-
-
+                </div>
+                <?php get_template_part('template-parts/header-contacts')
+                ?>
+            </div>
 
         </header><!-- #masthead -->
 
         <?php get_template_part('template-parts/mobile-menu')
         ?>
+
 
         <main id="primary" class="site-main">
