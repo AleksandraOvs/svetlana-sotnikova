@@ -2514,6 +2514,12 @@ a.contacts__messenger:hover {
     border-color: var(--theme-color-light);
 }
 
+#header-contacts a:hover,
+#header-contacts .contacts__messengers a.contacts__messenger:hover {
+    background: transparent;
+
+}
+
 a.contacts__messenger:hover span {
     color: var(--theme-color-primary);
 }
