@@ -2472,6 +2472,7 @@ footer.footer * .menu {
 
 .contacts button.button {
     width: 100%;
+    max-width: 320px;
 }
 
 .contacts__email,
@@ -2482,7 +2483,7 @@ a.contacts__messenger,
     font-size: 14px;
     align-items: center;
     justify-content: center;
-    max-width: 280px;
+    max-width: 320px;
     padding: .5em 2em;
     border: 1px solid var(--theme-color-grey);
     border-radius: 30px;
