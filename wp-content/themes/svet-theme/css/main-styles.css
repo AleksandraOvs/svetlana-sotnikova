@@ -709,7 +709,6 @@ ul.main-menu li a:hover::before {
 
 #header-contacts a :hover {
     background: transparent;
-    font-weight: 600;
 }
 
 #header-contacts a:not(:last-child) {
