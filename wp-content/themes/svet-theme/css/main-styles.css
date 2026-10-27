@@ -2517,7 +2517,10 @@ a.contacts__messenger:hover {
 #header-contacts a:hover,
 #header-contacts .contacts__messengers a.contacts__messenger:hover {
     background: transparent;
+}
 
+#header-contacts .contacts__messengers a.contacts__messenger:hover span {
+    color: inherit;
 }
 
 a.contacts__messenger:hover span {
