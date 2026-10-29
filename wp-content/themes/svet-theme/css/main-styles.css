@@ -3107,7 +3107,7 @@ a.contacts__messenger:hover img {
 
     .about-me__inner__img._img-second {
         position: absolute;
-        bottom: 5vh;
+        bottom: 0;
     }
 
     .point-rec__inner {
