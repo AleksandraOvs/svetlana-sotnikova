@@ -3140,8 +3140,8 @@ a.contacts__messenger:hover img {
     }
 
     .section-home__inner::before {
-        content: 'Цен\Aнос\Aти';
-        font-size: 14vw;
+        content: 'Ценности';
+        font-size: 15.5vw;
         display: block;
         color: var(--theme-color-light);
         text-transform: uppercase;
@@ -3152,7 +3152,7 @@ a.contacts__messenger:hover img {
         left: 0;
         mix-blend-mode: overlay;
         z-index: 1;
-        width: 30vw;
+        width: 100%;
         height: 100%;
         line-height: 1;
         bottom: 0;
