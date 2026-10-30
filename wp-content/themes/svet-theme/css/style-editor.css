@@ -105,9 +105,9 @@ body.block-editor-page,
    ========================================================================== */
 
 .wp-block-quote {
-    border-left: 4px solid var(--theme-color-primary);
+    border-left: 4px solid var(--theme-color-accent);
     padding-left: 1em;
-    color: var(--theme-color-secondary);
+    color: var(--theme-color-primary);
 }
 
 .wp-block-quote cite {
