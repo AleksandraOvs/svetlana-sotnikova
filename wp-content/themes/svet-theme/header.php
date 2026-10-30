@@ -93,12 +93,20 @@
                 <div class="header__contacts">
 
                     <?php
-
                     $callback_button_text = carbon_get_theme_option('crb_callback_button_text');
+                    $callback_button_link = carbon_get_theme_option('crb_callback_button_link');
                     $callback_form_id = carbon_get_theme_option('crb_callback_button_shortcode');
                     ?>
 
-                    <?php if ($callback_button_text && $callback_form_id): ?>
+                    <?php if ($callback_button_text && $callback_button_link): ?>
+
+                        <a
+                            href="<?php echo esc_url($callback_button_link); ?>"
+                            class="header__callback-button button">
+                            <span><?php echo esc_html($callback_button_text); ?></span>
+                        </a>
+
+                    <?php elseif ($callback_button_text && $callback_form_id): ?>
 
                         <button
                             type="button"
@@ -120,11 +128,13 @@
                         </div>
 
                     <?php endif; ?>
+
                     <button class="menu-toggle">
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
+
                 </div>
                 <!-- end of header logo -->
             </div>

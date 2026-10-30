@@ -549,10 +549,13 @@ add_action('carbon_fields_register_fields', function () {
                 ->set_width(33),
 
             Field::make('text', 'crb_callback_button_text', 'Текст кнопки для формы')
-                ->set_width(50),
+                ->set_width(33),
+
+            Field::make('text', 'crb_callback_button_link', 'Ссылка кнопки')
+                ->set_width(33),
 
             Field::make('select', 'crb_callback_button_shortcode', 'Форма для кнопки')
-                ->set_width(50)
+                ->set_width(33)
                 ->set_options(function () {
 
                     $forms = get_posts([
